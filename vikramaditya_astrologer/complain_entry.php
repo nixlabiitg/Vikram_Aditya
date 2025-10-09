@@ -86,7 +86,7 @@
 
         alert("Complaint saved successfully!");
 
-        window.location.href = "complain_entry.php";
+        window.location.href = "complain_entry";
 
         return false;
     }

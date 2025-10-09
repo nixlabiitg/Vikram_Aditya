@@ -29,7 +29,8 @@ if (isset($_POST['save_status'])) {
 
     echo "<script>
         alert('Status saved successfully!');
-        window.location.href = 'tags_leads.php#status-section';
+        window.location.href = 'tags_leads#status-section';
     </script>";
 }
 ?>
+<?php include("layouts/footer.php"); ?>

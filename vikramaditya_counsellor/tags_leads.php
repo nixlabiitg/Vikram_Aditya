@@ -197,7 +197,7 @@
 
     document.querySelector("form").reset();
 
-    window.location.href = "tags_leads.php#bulk-tab";
+    window.location.href = "tags_leads#bulk-tab";
 
     return false;
 }

@@ -74,7 +74,7 @@
 
 <script>
 function confirmBooking() {
-    window.location.href = "follow_up.php?success=1";
+    window.location.href = "follow_up?success=1";
 }
 </script>
 

@@ -7,7 +7,7 @@
   </header>
 
   <!-- Main Layout -->
-  <form action="save_puja_booking.php" method="POST" class="grid grid-cols-1 lg:grid-cols-3 gap-6 p-6">
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 p-6">
     
     <!-- Left Section -->
     <div class="lg:col-span-2 bg-white/90 backdrop-blur rounded-2xl shadow-lg border border-orange-200">
@@ -106,7 +106,7 @@
 
         <!-- Book Button -->
         <div class="text-center">
-          <button type="submit" class="px-6 py-3 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-xl font-semibold shadow-lg hover:scale-105 transition">
+          <button onclick="confirmBooking()" class="px-6 py-3 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-xl font-semibold shadow-lg hover:scale-105 transition">
              Book Puja
           </button>
         </div>
@@ -142,7 +142,7 @@
       </div>
 
     </div>
-  </form>
+</div>
 </div>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
@@ -152,7 +152,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const slotsFilled = document.querySelector("#slots-filled");
   const totalBookings = document.querySelector("#total-bookings");
 
-  // Dummy puja slot data with date & time
   const pujaSlots = {
     "Guru Puja": { 
       total: 10, 
@@ -185,12 +184,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const selected = radio.value;
       const data = pujaSlots[selected];
 
-      // update numbers
       totalBookings.textContent = data.booked.length;
       slotsFilled.textContent = data.booked.length;
       availableSlots.textContent = data.total - data.booked.length;
 
-      // update booked members
       if (data.booked.length > 0) {
         bookedContainer.innerHTML = "";
         data.booked.forEach(entry => {
@@ -206,6 +203,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+function confirmBooking() {
+    window.location.href = "puja_booked_client?success=1";
+}
 </script>
 
 

@@ -519,15 +519,15 @@
             </div>
             <div>
               <h1 class="text-white text-2xl font-bold">Admin</h1>
-              <button id="fullscreen-btn" 
-                class="bg-orange-500 text-white p-2 rounded-lg hover:bg-orange-600">
-                <svg id="fs-icon" xmlns="http://www.w3.org/2000/svg" fill="none" 
-                    viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                    d="M4 8V4h4M16 4h4v4M20 16v4h-4M8 20H4v-4"/>
-                </svg>
-              </button>
             </div>
+            <button  id="fullscreenBtn" 
+              class="text-white p-2 rounded-lg cursor-pointer">
+              <svg id="fs-icon" xmlns="http://www.w3.org/2000/svg" fill="none" 
+                  viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                  d="M4 8V4h4M16 4h4v4M20 16v4h-4M8 20H4v-4"/>
+              </svg>
+            </button>
 
             <div class="hidden md:block text-white tracking-light text-[32px] font-bold leading-tight min-w-72"></div>
 

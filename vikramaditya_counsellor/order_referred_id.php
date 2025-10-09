@@ -95,7 +95,7 @@
     }
 
     localStorage.setItem("cartItems", JSON.stringify(selectedItems));
-    window.location.href = "order_cart.php";
+    window.location.href = "order_cart";
   });
 </script>
 

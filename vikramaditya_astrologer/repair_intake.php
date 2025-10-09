@@ -72,7 +72,7 @@
 
         alert("lead saved successfully!");
 
-        window.location.href = "repair_intake.php";
+        window.location.href = "repair_intake";
 
         return false;
     }

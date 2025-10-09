@@ -118,7 +118,7 @@
     function saveManual(event) {
         event.preventDefault();
         alert("Manual lead saved successfully!");
-        window.location.href = "add_lead.php#manual";
+        window.location.href = "add_lead#manual";
         location.reload(); // make sure Alpine picks up the hash
         return false;
     }
@@ -126,7 +126,7 @@
     function saveBulk(event) {
         event.preventDefault();
         alert("Bulk import saved successfully!");
-        window.location.href = "add_lead.php#bulk";
+        window.location.href = "add_lead#bulk";
         location.reload();
         return false;
     }
@@ -134,7 +134,7 @@
     function saveAuto(event) {
         event.preventDefault();
         alert("Integration saved successfully!");
-        window.location.href = "add_lead.php#auto";
+        window.location.href = "add_lead#auto";
         location.reload();
         return false;
     }

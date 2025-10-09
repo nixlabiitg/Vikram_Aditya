@@ -1,5 +1,5 @@
 <?php
-include('layouts/header.php'); ?>
+include("layouts/header.php"); ?>
 <div class="p-6 relative">
     <!-- Top Bar -->
     <div class="flex justify-between items-center mb-4">
@@ -72,4 +72,4 @@ include('layouts/header.php'); ?>
 
 
 
-<?php include('layouts/footer.php'); ?>
+<?php include("layouts/footer.php"); ?>

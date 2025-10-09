@@ -40,7 +40,7 @@
                             echo '<td class="px-6 py-4 border-b border-[#FFD699]">' . $repair[3] . '</td>';
                             echo '<td class="px-6 py-4 border-b border-[#FFD699]">' . $repair[4] . '</td>';
                             echo '<td class="px-6 py-4 border-b border-[#FFD699] text-center">';
-                            echo '<a href="repair_detail.php?id=' . $repair[0] . '" class="inline-flex items-center gap-1 text-blue-600 hover:underline font-medium">';
+                            echo '<a href="repair_detail?id=' . $repair[0] . '" class="inline-flex items-center gap-1 text-blue-600 hover:underline font-medium">';
                             echo '<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">';
                             echo '<path stroke-linecap="round" stroke-linejoin="round" d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> View';
                             echo '</a>';

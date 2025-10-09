@@ -89,7 +89,7 @@
     }
 
     localStorage.setItem("cartItems", JSON.stringify(selectedItems));
-    window.location.href = "puja_cart.php";
+    window.location.href = "puja_cart";
   });
 </script>
 

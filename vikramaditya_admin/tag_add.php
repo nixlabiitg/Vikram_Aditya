@@ -22,7 +22,8 @@ if (isset($_POST['save_tag'])) {
 
     echo "<script>
         alert('Tag saved successfully!');
-        window.location.href = 'tags_leads.php#tag-section';
+        window.location.href = 'tags_leads#tag-section';
     </script>";
 }
 ?>
+<?php include("layouts/header.php"); ?>

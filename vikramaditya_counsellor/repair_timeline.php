@@ -140,7 +140,7 @@ function saveNote(event) {
     localStorage.setItem("ticketData", JSON.stringify(ticketData));
 
     alert("Note saved successfully!");
-    window.location.href = "repair_detail.php?id=" + ticketId;
+    window.location.href = "repair_detail?id=" + ticketId;
     return false;
 }
 </script>

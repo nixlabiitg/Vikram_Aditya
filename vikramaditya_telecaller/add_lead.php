@@ -118,7 +118,7 @@
     function saveManual(event) {
         event.preventDefault();
         alert("Manual lead saved successfully!");
-        window.location.href = "view_stages.php";
+        window.location.href = "view_stages";
         
         return false;
     }
@@ -126,7 +126,7 @@
     function saveBulk(event) {
         event.preventDefault();
         alert("Bulk import saved successfully!");
-        window.location.href = "view_stages.php";
+        window.location.href = "view_stages";
         
         return false;
     }
@@ -134,7 +134,7 @@
     function saveAuto(event) {
         event.preventDefault();
         alert("Integration saved successfully!");
-        window.location.href = "view_stages.php";
+        window.location.href = "view_stages";
         
         return false;
     }

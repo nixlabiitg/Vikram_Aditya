@@ -95,7 +95,7 @@
 
         alert("Note saved successfully!");
 
-        window.location.href = "repair_module.php";
+        window.location.href = "repair_module";
 
         return false;
     }

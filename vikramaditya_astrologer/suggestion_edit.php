@@ -1217,14 +1217,14 @@
      function saveprofile(event) {
         event.preventDefault();
         alert("profile lead saved successfully!");
-        window.location.href = "add_lead.php#profile";
+        window.location.href = "add_lead#profile";
         location.reload();
         return false;
     }
     function saveproblem(event) {
         event.preventDefault();
         alert("problem lead saved successfully!");
-        window.location.href = "add_lead.php#problem";
+        window.location.href = "add_lead#problem";
         location.reload(); 
         return false;
     }
@@ -1232,7 +1232,7 @@
     function saveinvestivation(event) {
         event.preventDefault();
         alert("investivation import saved successfully!");
-        window.location.href = "add_lead.php#investivation";
+        window.location.href = "add_lead#investivation";
         location.reload();
         return false;
     }
@@ -1240,7 +1240,7 @@
     function saveremedy(event) {
         event.preventDefault();
         alert("Integration saved successfully!");
-        window.location.href = "add_lead.php#remedy";
+        window.location.href = "add_lead#remedy";
         location.reload();
         return false;
     }
@@ -1248,7 +1248,7 @@
     function savekavach(event) {
         event.preventDefault();
         alert("kavach lead saved successfully!");
-        window.location.href = "add_lead.php#kavach";
+        window.location.href = "add_lead#kavach";
         location.reload(); 
         return false;
     }
@@ -1256,7 +1256,7 @@
     function savedravya(event) {
         event.preventDefault();
         alert("dravya import saved successfully!");
-        window.location.href = "add_lead.php#dravya";
+        window.location.href = "add_lead#dravya";
         location.reload();
         return false;
     }
@@ -1264,14 +1264,14 @@
     function savepuja(event) {
         event.preventDefault();
         alert("Integration saved successfully!");
-        window.location.href = "add_lead.php#puja";
+        window.location.href = "add_lead#puja";
         location.reload();
         return false;
     }
     function saveplanet(event) {
         event.preventDefault();
         alert("planet lead saved successfully!");
-        window.location.href = "add_lead.php#planet";
+        window.location.href = "add_lead#planet";
         location.reload(); 
         return false;
     }
@@ -1279,7 +1279,7 @@
     function savenote(event) {
         event.preventDefault();
         alert("note import saved successfully!");
-        window.location.href = "add_lead.php#note";
+        window.location.href = "add_lead#note";
         location.reload();
         return false;
     }

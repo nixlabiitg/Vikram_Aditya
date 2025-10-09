@@ -259,7 +259,7 @@
     alert("Please select a client first!");
     return;
   }
-  window.location.href = method + ".php?client=" + clientId;
+  window.location.href = method + "?client=" + clientId;
 }
 
   const cartBody = document.getElementById("cart-body");

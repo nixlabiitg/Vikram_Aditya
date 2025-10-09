@@ -57,7 +57,7 @@
 
         alert("Upload successfully!");
 
-        window.location.href = "library.php";
+        window.location.href = "library";
 
         return false;
     }
