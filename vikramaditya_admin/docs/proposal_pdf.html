@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proposal</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: #f8f9fa;
+      color: #212529;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #reportContainer::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 8rem;
+      font-weight: bold;
+      color: rgba(217, 119, 6, 0.1);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    h1, h2, h3, h5 {
+      margin-bottom: 0.75rem;
+    }
+
+    h1 { font-size: 2rem; font-weight: 800; color: #7A3E00; }
+    h2 { font-size: 1.25rem; font-weight: 700; color: #7A3E00; }
+    h3, h5 { font-weight: 600; color: #7A3E00; }
+
+    p { margin-bottom: 0.5rem; }
+
+    .text-muted { color: #6c757d; }
+    .fst-italic { font-style: italic; }
+    .fw-bold { font-weight: 700; }
+    .fw-semibold { font-weight: 600; }
+
+    .border { border: 1px solid #dee2e6; }
+    .border-bottom { border-bottom: 2px solid #fdba74; }
+    .border-top { border-top: 1px solid #dee2e6; }
+    .border-left-4 { border-left: 4px solid #ea580c; padding-left: 0.75rem; }
+
+    .rounded-3 { border-radius: 0.75rem; }
+    .rounded-4 { border-radius: 1rem; }
+
+    .p-3 { padding: 1rem; }
+    .p-4 { padding: 1.5rem; }
+    .p-5 { padding: 2rem; }
+    .pb-3 { padding-bottom: 1rem; }
+    .pb-4 { padding-bottom: 1.5rem; }
+    .pt-4 { padding-top: 1.5rem; }
+    .mb-2 { margin-bottom: 0.5rem; }
+    .mb-3 { margin-bottom: 0.75rem; }
+    .mb-4 { margin-bottom: 1rem; }
+    .mt-5 { margin-top: 2rem; }
+    .mt-2 { margin-top: 0.5rem; }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      margin: -0.5rem;
+    }
+
+    .col-md-6 {
+      width: 100%;
+      padding: 0.5rem;
+    }
+
+    @media(min-width: 768px) {
+      .col-md-6 { width: 50%; }
+    }
+
+    .bg-warning-subtle { background-color: #fff7ed; }
+    .text-warning-emphasis { color: #7A3E00; }
+
+    .shadow-sm { box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075); }
+    .shadow-inner { box-shadow: inset 0 0.125rem 0.25rem rgba(0,0,0,0.05); }
+
+    .bg-gradient-orange {
+      background: linear-gradient(to right, #fff7ed, #ffedd5);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 0;
+      font-size: 0.875rem;
+    }
+
+    th, td {
+      border: 1px solid #fde68a;
+      padding: 0.75rem;
+      text-align: left;
+    }
+
+    th { background: linear-gradient(to right, #fed7aa, #fdba74); color: #7A3E00; text-transform: uppercase; font-size: 0.75rem; }
+
+    tbody tr:hover { background-color: #fff7ed; }
+
+    .text-center { text-align: center; }
+
+    @media print {
+      body * { visibility: hidden; }
+      #reportContainer, #reportContainer * { visibility: visible; }
+      #reportContainer { position: absolute; left: 0; top: 0; width: 100%; }
+      body, #reportContainer { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="reportContainer" class="container rounded-4 p-5">
+
+  <div class="border-bottom pb-3 position-relative" style="z-index: 1;">
+    <h1>Astrology Proposal</h1>
+    <p class="text-muted small">Personalized Guidance & Services</p>
+  </div>
+
+  <div class="row mb-4 position-relative" style="z-index: 1;">
+    <div class="col-md-6">
+      <div class="p-3 bg-warning-subtle border rounded-3">
+        <h5>Client Information</h5>
+        <p><strong>Name:</strong> Kiran Das</p>
+        <p><strong>Contact:</strong> +91 98765 12345</p>
+        <p><strong>Channel:</strong> WhatsApp</p>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="p-3 bg-warning-subtle border rounded-3">
+        <h5>Astrologer Information</h5>
+        <p><strong>Astrologer:</strong> Vikram Aditya</p>
+        <p><strong>Date & Time:</strong> 2025-08-06 04:00 PM</p>
+        <p><strong>Sent On:</strong> 2025-08-06</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-4 position-relative" style="z-index: 1;">
+    <h2 class="border-left-4">Greeting Message</h2>
+    <div class="p-4 rounded-3 shadow-inner bg-gradient-orange">
+      Dear Kiran,<br>
+      Thank you for connecting with us. I am pleased to share the following proposal for your astrological consultation.<br>
+      Looking forward to guiding you towards clarity and positivity.
+    </div>
+  </div>
+
+  <div class="mb-4 position-relative" style="z-index: 1;">
+    <h2 class="border-left-4">Proposed Services</h2>
+    <div class="rounded-3 border shadow-sm overflow-hidden">
+      <table>
+        <thead>
+          <tr>
+            <th class="text-center">#</th>
+            <th>Service Name</th>
+            <th>Description</th>
+            <th class="text-center">Duration</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="text-center">1</td>
+            <td>Kundali Reading</td>
+            <td>Detailed life analysis with remedies</td>
+            <td class="text-center">1 hour</td>
+          </tr>
+          <tr>
+            <td class="text-center">2</td>
+            <td>Marriage Consultation</td>
+            <td>Guidance on compatibility & future</td>
+            <td class="text-center">30 mins</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="text-center text-muted small mt-5 pt-4 border-top position-relative" style="z-index: 1;">
+    <p class="fst-italic">“The stars may guide you, but your choices define your destiny.”</p>
+    <p class="fw-semibold">Astrologer Vikram Aditya</p>
+    <p class="text-xs text-muted mt-1">© 2025 AstroConsult • Confidential Document</p>
+  </div>
+</div>
+
+</body>
+</html>
