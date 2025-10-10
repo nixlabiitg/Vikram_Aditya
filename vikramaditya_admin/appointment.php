@@ -139,6 +139,18 @@
         </div>
     </div>
 </div>
+<!-- Modal Structure -->
+<div id="appointmentModal" class="fixed inset-0 bg-black/30 bg-opacity-50 hidden items-center justify-center z-50">
+  <div class="bg-white rounded-xl shadow-lg p-6 w-80 max-w-full">
+    <h2 class="text-lg font-semibold text-[#A05000] mb-4" id="modalDate">Appointments</h2>
+    <ul id="modalEventList" class="list-disc pl-5 text-gray-700 mb-4"></ul>
+    <div class="flex justify-end gap-2">
+      <button id="closeModal" class="px-4 py-2 rounded-lg bg-gray-300 hover:bg-gray-400">Close</button>
+      <button id="bookAppointment" class="px-4 py-2 rounded-lg bg-[#E67300] text-white hover:bg-[#A05000]">Book Appointment</button>
+    </div>
+  </div>
+</div>
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
@@ -149,21 +161,47 @@ document.addEventListener('DOMContentLoaded', function() {
         showNonCurrentDates: false,
         expandRows: true,          
 
-        dateClick: function(info) {
-            const clickedDate = info.dateStr;
-            const events = calendar.getEvents();
-            const eventsOnDate = events.filter(event => event.startStr === clickedDate);
+       dateClick: function(info) {
+          const clickedDate = info.dateStr;
+          const events = calendar.getEvents();
+          const eventsOnDate = events.filter(event => event.startStr === clickedDate);
 
-            if (eventsOnDate.length > 0) {
-                let message = `Appointments on ${clickedDate}:\n\n`;
-                eventsOnDate.forEach(e => {
-                    message += `- ${e.title}\n`;
-                });
-                alert(message); 
-            } else {
-                alert(`No appointments on ${clickedDate}`);
-            }
-        },
+          // Modal elements
+          const modal = document.getElementById('appointmentModal');
+          const eventList = document.getElementById('modalEventList');
+          const modalDate = document.getElementById('modalDate');
+          const bookBtn = document.getElementById('bookAppointment');
+
+          modalDate.textContent = `Appointments on ${clickedDate}`;
+          
+          eventList.innerHTML = '';
+          if (eventsOnDate.length > 0) {
+              eventsOnDate.forEach(e => {
+                  const li = document.createElement('li');
+                  li.textContent = e.title;
+                  eventList.appendChild(li);
+              });
+          } else {
+              const li = document.createElement('li');
+              li.textContent = 'No appointments';
+              eventList.appendChild(li);
+          }
+
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+
+          bookBtn.onclick = function() {
+              modal.classList.add('hidden');
+              modal.classList.remove('flex');
+              window.location.href = 'appointment_book?date=' + clickedDate;
+          };
+
+          document.getElementById('closeModal').onclick = function() {
+              modal.classList.add('hidden');
+              modal.classList.remove('flex');
+          };
+      },
+
 
         dayCellDidMount: function(info) {
             

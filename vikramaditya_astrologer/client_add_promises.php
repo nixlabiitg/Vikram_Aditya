@@ -25,15 +25,7 @@
         <input type="date" name="date"
           class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400">
       </div>
-      <div>
-        <label class="block text-sm font-medium text-gray-700 mb-1">Status</label>
-        <select name="status"
-          class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400">
-          <option value="Pending">Pending</option>
-          <option value="In Progress">In Progress</option>
-          <option value="Fulfilled">Fulfilled</option>
-        </select>
-      </div>
+      
       <div class="flex justify-end gap-3 pt-4">
         <a href="client_promises" 
           class="px-5 py-2 bg-gray-200 hover:bg-gray-300 rounded-lg font-medium text-gray-700">Cancel</a>

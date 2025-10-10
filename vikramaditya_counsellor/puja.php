@@ -97,10 +97,8 @@
                     focus:outline-none focus:ring-2 focus:ring-orange-700 focus:border-orange-800
                     transition duration-200 ease-in-out text-gray-700 font-medium">
             <option value="">-- Select Slot --</option>
-            <option value="06:00-07:00">06:00 - 07:00 AM</option>
-            <option value="08:00-09:00">08:00 - 09:00 AM</option>
-            <option value="10:00-11:00">10:00 - 11:00 AM</option>
-            <option value="16:00-17:00">04:00 - 05:00 PM</option>
+            <option value="06:00-07:00">09:00 AM - 12:00 PM</option>
+            <option value="08:00-09:00">01:00 PM - 07:00 PM</option>
           </select>
         </div>
 

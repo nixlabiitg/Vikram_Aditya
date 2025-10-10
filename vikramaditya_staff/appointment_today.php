@@ -19,7 +19,7 @@
     </div>
 
     <div class="bg-[#FFF9F0] shadow rounded-lg p-4 border border-[#FFD699] overflow-x-auto">
-        <h2 class="text-lg font-semibold text-[#7A3E00] mb-4">Client Master List</h2>
+        <h2 class="text-lg font-semibold text-[#7A3E00] mb-4">clients</h2>
         <div class="overflow-x-auto -webkit-overflow-scrolling-touch">
         <table class="min-w-[700px] md:min-w-full sm:min-w-full">
             <thead>

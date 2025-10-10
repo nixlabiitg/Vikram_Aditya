@@ -22,7 +22,7 @@
                 <tbody class="bg-white text-gray-700">
                     <?php
                     $team = [
-                        ["Pranjal", "Astrologer", "+91 9876543210", "astroa@example.com", "Active"],
+                        ["Vikram", "Astrologer", "+91 9876543210", "astroa@example.com", "Active"],
                         ["Rahul", "Counselor", "+91 9123456780", "counselx@example.com", "Active"],
                         ["Rina Sharma", "Telecaller", "+91 9988776655", "rina@example.com", "Inactive"]
                     ];

@@ -195,12 +195,12 @@
             </svg>
         Cash
         </button>
-        <button onclick="redirectToPayment('card')" 
+        <button onclick="redirectToPayment('pos_card')" 
         class="bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 flex flex-col items-center gap-1">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2" ry="2"/><path d="M2 10h20"/></svg>
         Card
         </button>
-        <button onclick="redirectToPayment('upi')" 
+        <button onclick="redirectToPayment('pos_upi')" 
         class="bg-purple-600 text-white py-2 rounded-lg hover:bg-purple-700 flex flex-col items-center gap-1">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2" ry="2"/></svg>
         UPI

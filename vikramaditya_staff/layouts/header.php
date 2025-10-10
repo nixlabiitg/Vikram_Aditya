@@ -177,8 +177,8 @@
                       </svg>
                     </div>
                     <div x-show="open" x-transition class="ml-10 mt-1 space-y-1 text-sm text-[#ffb366]">
+                      <a href="add_clients" class="block py-1 hover:text-white <?php echo $currentPage == 'add_clients' ? 'text-white' : 'hover:text-white' ?>">Register Client</a>
                       <a href="all_clients" class="block py-1 hover:text-white <?php echo $currentPage == 'all_clients' ? 'text-white' : 'hover:text-white' ?>">All Clients</a>
-                      <a href="add_clients" class="block py-1 hover:text-white <?php echo $currentPage == 'add_clients' ? 'text-white' : 'hover:text-white' ?>">Add Client</a>
                     </div>
                   </div>
 
@@ -209,8 +209,8 @@
                       </svg>
                     </div>
                     <div x-show="open" x-transition class="ml-10 mt-1 space-y-1 text-sm text-[#ffb366]">
-                      <a href="repair_detail" class="block py-1 hover:text-white <?php echo $currentPage == 'repair_detail' ? 'text-white' : 'hover:text-white' ?>">Detailed</a>
                       <a href="repair_intake" class="block py-1 hover:text-white <?php echo $currentPage == 'repair_intake' ? 'text-white' : 'hover:text-white' ?>">Repair Intake Form</a>
+                      <a href="repair_detail" class="block py-1 hover:text-white <?php echo $currentPage == 'repair_detail' ? 'text-white' : 'hover:text-white' ?>">Detailed</a>
                     </div>  
                   </div>
 
@@ -230,8 +230,8 @@
                       </svg>
                     </div>
                     <div x-show="open" x-transition class="ml-10 mt-1 space-y-1 text-sm text-[#ffb366]">
-                      <a href="complain" class="block py-1 hover:text-white <?php echo $currentPage == 'complain' ? 'text-white' : 'hover:text-white' ?>">All Complaints</a>
                       <a href="complain_entry" class="block py-1 hover:text-white <?php echo $currentPage == 'complain_entry' ? 'text-white' : 'hover:text-white' ?>">Add Complain</a>
+                      <a href="complain" class="block py-1 hover:text-white <?php echo $currentPage == 'complain' ? 'text-white' : 'hover:text-white' ?>">All Complaints</a>
                     </div>    
                   </div>
                 </div>

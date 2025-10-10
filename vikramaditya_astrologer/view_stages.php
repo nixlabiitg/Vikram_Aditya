@@ -84,14 +84,40 @@
               <p><span class="font-semibold">Status:</span> Follow-up Scheduled</p>
 
               <!-- Interested Services Dropdown -->
-              <label class="block mt-2 text-[11px] font-semibold" for="services">Interested Services:</label>
-              <select id="services" class="mt-1 w-full border border-gray-300 rounded px-2 py-1 text-xs">
-                <option>Select Service</option>
-                <option>Astrology Consultation</option>
-                <option>Tarot Reading</option>
-                <option>Horoscope Matching</option>
-                <option>Numerology Analysis</option>
-              </select>
+              <div x-data="{ open: false, selected: [] }" class="relative w-full">
+                <label class="block mt-2 text-[11px] font-semibold" for="services">Interested Services:</label>
+
+                <!-- Dropdown button -->
+                <div 
+                  @click="open = !open" 
+                  class="mt-1 w-full border border-gray-300 rounded px-2 py-1 text-xs bg-white cursor-pointer flex justify-between items-center"
+                >
+                  <span x-text="selected.length > 0 ? selected.join(', ') : 'Select Service'"></span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-2 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
+
+                <!-- Dropdown list -->
+                <div 
+                  x-show="open" 
+                  @click.away="open = false"
+                  class="absolute mt-1 w-full bg-white border border-gray-300 rounded shadow-md z-10 text-xs"
+                >
+                  <template x-for="service in ['Astrology Consultation', 'Tarot Reading', 'Horoscope Matching', 'Numerology Analysis']" :key="service">
+                    <label class="flex items-center px-2 py-1 hover:bg-gray-100 cursor-pointer">
+                      <input 
+                        type="checkbox" 
+                        :value="service" 
+                        x-model="selected" 
+                        class="mr-2 accent-indigo-600"
+                      >
+                      <span x-text="service"></span>
+                    </label>
+                  </template>
+                </div>
+              </div>
+
 
               <p class="mt-2"><span class="font-semibold">Notes:</span> Interested in premium package.</p>
             </div>

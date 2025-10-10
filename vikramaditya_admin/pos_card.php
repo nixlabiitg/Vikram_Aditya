@@ -113,19 +113,85 @@ foreach ($cart as $item) {
     <?php endif; ?>
   </div>
 </div>
-
 <script>
 function printInvoice() {
-  let invoice = document.getElementById("invoice").innerHTML;
-  let win = window.open('', '', 'width=800,height=600');
-  win.document.write('<html><head><title>Invoice</title>');
-  win.document.write('<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">');
-  win.document.write('</head><body class="p-6">');
-  win.document.write(invoice);
-  win.document.write('</body></html>');
+  const invoiceContent = document.getElementById("invoice").innerHTML;
+  const win = window.open('', '', 'width=850,height=700');
+
+  win.document.write(`
+  <html>
+    <head>
+      <title>Invoice</title>
+      <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+      <style>
+        @page { margin: 20mm; }
+        body { 
+          font-family: 'Inter', sans-serif; 
+          background-color: #fff; 
+          color: #111827;
+        }
+        .invoice-box {
+          max-width: 800px;
+          margin: auto;
+          background: #ffffff;
+          padding: 30px 50px;
+          border: 1px solid #e5e7eb;
+          border-radius: 10px;
+        }
+        .logo {
+          width: 140px;
+        }
+        th, td {
+          padding: 6px 8px;
+          border-bottom: 1px solid #e5e7eb;
+        }
+        th {
+          background-color: #f9fafb;
+        }
+        .footer-note {
+          margin-top: 40px;
+          font-size: 0.85rem;
+          color: #6b7280;
+          text-align: center;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="invoice-box">
+        <!-- ===== HEADER WITH LOGO & COMPANY INFO ===== -->
+        <div class="text-center border-b pb-4 mb-6">
+          <img src="assets/img/VK_logo.png" alt="Company Logo" class="logo mx-auto mb-2">
+          <h2 class="text-xl font-semibold text-gray-800">VK Astrology</h2>
+          <p class="text-sm text-gray-500 leading-tight">
+            Guwahati, Assam - 781021<br>
+            Phone: +91 98765 43210 | Email: info@vkastrology.com
+          </p>
+        </div>
+
+        <!-- ===== INVOICE TITLE AND DATE ===== -->
+        <div class="flex justify-between items-center mb-4">
+          <h1 class="text-2xl font-bold text-gray-800">INVOICE</h1>
+          <p class="text-sm text-gray-500">${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()}</p>
+        </div>
+
+        <!-- ===== MAIN INVOICE CONTENT ===== -->
+        ${invoiceContent}
+
+        <!-- ===== FOOTER NOTE ===== -->
+        <div class="footer-note">
+          <p>Thank you for your business!</p>
+          <p>This is a computer-generated invoice. No signature required.</p>
+        </div>
+      </div>
+    </body>
+  </html>
+  `);
+
   win.document.close();
+  win.focus();
   win.print();
 }
 </script>
+
 
 <?php include("layouts/footer.php"); ?>

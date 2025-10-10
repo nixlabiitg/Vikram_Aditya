@@ -7,7 +7,7 @@
     $repairPages = ['repair_dashboard','repair_detail','repair_intake','repair_module','repair_timeline','repair_setting'];
     $complainPages = ['complain_dashboard','complain','complain_entry','complain_feedback','catagory_wise_analytics','staff_performance','complain_tracker','complain_resolution'];
     $orderPages = ['order_referred','order_cart','order_accepted','order_completed'];
-    $pujaPages =  ['puja_referred','puja_cart','puja_accepted','puja_completed','puja'];
+    $pujaPages =  ['puja_referred','puja_cart','puja_accepted','puja_completed','puja','puja_booked_client'];
     
 
     $isClientsOpen = in_array($currentPage, ['all_clients', 'client_active', 'client_inactive','client_add_promises','client_promises']);
@@ -17,7 +17,7 @@
     $isRepairOpen = in_array($currentPage, ['repair_dashboard','repair_detail','repair_intake','repair_module','repair_timeline','repair_setting']);
     $isComplainOpen = in_array($currentPage, ['complain_dashboard','complain','complain_entry','complain_feedback','catagory_wise_analytics','staff_performance','complain_tracker','complain_resolution']);
     $isOrderOpen = in_array($currentPage, ['order_referred','order_cart','order_accepted','order_completed']);
-    $isPujaOpen = in_array($currentPage, ['puja_referred','puja_cart','puja_accepted','puja_completed','puja']);
+    $isPujaOpen = in_array($currentPage, ['puja_referred','puja_cart','puja_accepted','puja_completed','puja','puja_booked_client']);
     ?>
 <html>
   <head>
@@ -413,7 +413,8 @@
                       <a href="puja_referred" class="block py-1 hover:text-white <?php echo $currentPage == 'puja_referred' ? 'text-white' : 'hover:text-white' ?>">Referred</a>
                       <a href="puja_cart" class="block py-1 hover:text-white <?php echo $currentPage == 'puja_cart' ? 'text-white' : 'hover:text-white' ?>">Cart</a>
                       <a href="puja_accepted" class="block py-1 hover:text-white <?php echo $currentPage == 'puja_accepted' ? 'text-white' : 'hover:text-white' ?>">Accepted</a>
-                      <a href="puja_completed" class="block py-1 hover:text-white <?php echo $currentPage == 'puja_completed' ? 'text-white' : 'hover:text-white' ?>">Completed</a>                      
+                      <a href="puja_completed" class="block py-1 hover:text-white <?php echo $currentPage == 'puja_completed' ? 'text-white' : 'hover:text-white' ?>">Completed</a>
+                      <a href="puja_booked_client" class="block py-1 hover:text-white <?php echo $currentPage == 'puja_booked_client' ? 'text-white' : 'hover:text-white' ?>">Bookings</a>                       
                     </div>
                   </div>
 

@@ -29,7 +29,6 @@
           <th class="px-5 py-3 text-left">Client Name</th>
           <th class="px-5 py-3 text-left">Promise</th>
           <th class="px-5 py-3 text-left">Date</th>
-          <th class="px-5 py-3 text-left">Status</th>
           <th class="px-5 py-3 text-center">Action</th>
         </tr>
       </thead>
@@ -40,9 +39,6 @@
           <td class="px-5 py-3"><a href="client_view">Rajesh Kumar</a></td>
           <td class="px-5 py-3">Weekly Astrology Guidance</td>
           <td class="px-5 py-3">2025-08-20</td>
-          <td class="px-5 py-3">
-            <span class="px-2 py-1 rounded-full text-xs bg-green-100 text-green-700">Completed</span>
-          </td>
           <td class="px-5 py-3 text-center">
             <button type="button"
               class="view-btn inline-flex items-center gap-1 px-4 py-2 rounded-lg bg-orange-500 text-white hover:bg-orange-600 shadow"
@@ -50,7 +46,6 @@
               data-client-name="Rajesh Kumar"
               data-promise="Weekly Astrology Guidance"
               data-date="2025-08-20"
-              data-status="Completed"
               data-notes="Delivered by email with PDF report.">
              
               <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -67,9 +62,7 @@
           <td class="px-5 py-3"><a href="client_view">Anita Sharma</a></td>
           <td class="px-5 py-3">Monthly Horoscope Report</td>
           <td class="px-5 py-3">2025-08-10</td>
-          <td class="px-5 py-3">
-            <span class="px-2 py-1 rounded-full text-xs bg-yellow-100 text-yellow-700">Pending</span>
-          </td>
+          
           <td class="px-5 py-3 text-center">
             <button type="button"
               class="view-btn inline-flex items-center gap-1 px-4 py-2 rounded-lg bg-orange-500 text-white hover:bg-orange-600 shadow"
@@ -77,7 +70,6 @@
               data-client-name="Anita Sharma"
               data-promise="Monthly Horoscope Report"
               data-date="2025-08-10"
-              data-status="Pending"
               data-notes="Draft prepared; final review scheduled.">
               <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"></path>
@@ -90,12 +82,9 @@
 
         <tr class="hover:bg-[#FFF7EB]">
           <td class="px-5 py-3 font-medium">CL003</td>
-          <td class="px-5 py-3"><a href="client_view">Manoj Das</t</a>d>
+          <td class="px-5 py-3"><a href="client_view">Manoj Das</a></td>
           <td class="px-5 py-3">Puja Ceremony Arrangement</td>
           <td class="px-5 py-3">2025-09-15</td>
-          <td class="px-5 py-3">
-            <span class="px-2 py-1 rounded-full text-xs bg-blue-100 text-blue-700">In Progress</span>
-          </td>
           <td class="px-5 py-3 text-center">
             <button type="button"
               class="view-btn inline-flex items-center gap-1 px-4 py-2 rounded-lg bg-orange-500 text-white hover:bg-orange-600 shadow"
@@ -103,7 +92,6 @@
               data-client-name="Manoj Das"
               data-promise="Puja Ceremony Arrangement"
               data-date="2025-09-15"
-              data-status="In Progress"
               data-notes="Venue booked; pandit confirmed.">
               <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"></path>
@@ -142,10 +130,6 @@
     <div class="space-y-3">
       <p><span class="font-semibold">Promise:</span> <span id="mTitle"></span></p>
       <p><span class="font-semibold">Date:</span> <span id="mDate"></span></p>
-      <p class="flex items-center gap-2">
-        <span class="font-semibold">Status:</span>
-        <span id="mStatusBadge" class="px-2 py-1 text-xs rounded-full bg-gray-100 text-gray-700"></span>
-      </p>
       <div>
         <p class="font-semibold">Notes:</p>
         <p id="mNotes" class="text-gray-700 mt-1"></p>
