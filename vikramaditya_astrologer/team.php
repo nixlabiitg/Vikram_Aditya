@@ -5,6 +5,15 @@
         <button class="px-4 py-2 bg-[#FF7F50] text-white rounded hover:bg-[#FF9966]"><a href="add_team">+ Add Team Member</a></button>
     </div>
 
+    <div class="bg-[#FFF9F0] shadow rounded-lg p-4 mb-4 md:mb-6 border border-[#FFD699] flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+      <input type="text" placeholder="Search Clients." class="border border-gray-300 rounded px-4 py-2 w-full md:w-64 focus:outline-none focus:ring-2 focus:ring-orange-300 focus:border-orange-400" />
+      <select class="border border-gray-300 rounded px-4 py-2 w-full md:w-auto">
+          <option value="">All</option>
+          <option value="active">Active</option>
+          <option value="inactive">Inactive</option>
+      </select>
+    </div>
+
     <div class="bg-[#FFF9F0] shadow rounded-lg p-4 border border-[#FFD699]">
         
         <div class="overflow-x-auto -webkit-overflow-scrolling-touch">
