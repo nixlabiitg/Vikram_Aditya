@@ -1,15 +1,12 @@
 <?php include("layouts/header.php"); ?>
 
 <div class="main-content p-6">
-     <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-4 md:mb-6 space-y-2 md:space-y-0">
-        <h1 class="text-2xl font-bold text-[#7A3E00]">Referred Items</h1>
-        
+    <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-4 md:mb-6 space-y-2 md:space-y-0">
+      <h1 class="text-2xl font-bold text-[#7A3E00]">Referred Items</h1>
+      <input type="text" placeholder="Search Client ID..." class="bg-white border border-gray-300 rounded px-4 py-2 w-full md:w-64 focus:outline-none focus:ring-2 focus:ring-orange-300 focus:border-orange-400" />
     </div>
-
      <!-- Clients Table View -->
     <div class="bg-[#FFF9F0] shadow rounded-lg p-4 border border-[#FFD699] ">
-        
-        
         <div class="overflow-x-auto -webkit-overflow-scrolling-touch">
         <table class="min-w-[700px] md:min-w-full sm:min-w-full">
             <thead>
@@ -45,7 +42,27 @@
                     <div id="noteDisplay" class="mt-4 p-2 border rounded bg-gray-50 text-sm text-gray-700 hidden"></div>
                     </td>
                 </tr>
-                <!-- More Rows -->
+                <tr class="border-b border-[#FFD699]">
+                    <td class="px-4 py-2">Suresh</td>
+                    <td class="px-4 py-2">VGJUN202501</td>
+                    <td class="px-4 py-2">Guwahati</td>
+                    <td class="px-4 py-2">9864102986</td>
+                    <td class="px-4 py-2">27</td>
+                    <td class="px-4 py-2">
+                    <button onclick="window.location.href='puja_referred_id'" class="bg-[#8B4513] text-white px-3 py-1 rounded hover:bg-[#6B3410]">Referred Items</button>
+                    </td>
+                    <td class="px-4 py-2">
+                    <textarea id="noteInput" 
+                        class="border border-gray-400 rounded w-full p-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-300 focus:border-orange-400" 
+                        placeholder="Note"></textarea>
+
+                    <button onclick="updateNote()" 
+                        class="mt-2 bg-[#8B4513] text-white px-3 py-1 rounded text-sm hover:bg-[#e89a2f]">
+                        Update
+                    </button>
+                    <div id="noteDisplay" class="mt-4 p-2 border rounded bg-gray-50 text-sm text-gray-700 hidden"></div>
+                    </td>
+                </tr>
             </tbody>
 
             </tbody>
@@ -69,4 +86,28 @@ function updateNote() {
   document.getElementById("noteInput").value = "";
 }
 </script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const searchInput = document.querySelector('input[placeholder="Search Client ID..."]');
+  const tableRows = document.querySelectorAll('tbody tr');
+
+  function filterClients() {
+    const searchValue = searchInput.value.toLowerCase().trim();
+
+    tableRows.forEach(row => {
+      const clientIdCell = row.querySelectorAll('td')[1];
+      const clientId = clientIdCell ? clientIdCell.textContent.toLowerCase().trim() : '';
+
+      if (clientId.includes(searchValue) || searchValue === '') {
+        row.style.display = '';
+      } else {
+        row.style.display = 'none';
+      }
+    });
+  }
+
+  searchInput.addEventListener('input', filterClients);
+});
+</script>
+
 <?php include("layouts/footer.php"); ?>

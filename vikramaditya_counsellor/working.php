@@ -5,7 +5,8 @@
 
   <!-- Card -->
   <div class="bg-white shadow rounded-lg p-6 border border-[#FFD699]">
-    <form onsubmit="event.preventDefault(); window.location.href='settings';" class="space-y-6 " >
+    <form onsubmit="event.preventDefault(); window.location.href='settings.php';" class="space-y-6 " >
+      
       <!-- Working Days -->
       <div>
         <label class="block text-gray-700 font-medium mb-2">Working Days</label>

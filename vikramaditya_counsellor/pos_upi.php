@@ -113,6 +113,7 @@ foreach ($cart as $item) {
     <?php endif; ?>
   </div>
 </div>
+
 <script>
 function printInvoice() {
   const invoiceContent = document.getElementById("invoice").innerHTML;

@@ -2,10 +2,10 @@
     
 <div class="main-content p-4 md:p-6">
     <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-4 md:mb-6 space-y-2 md:space-y-0">
-        <h1 class="text-2xl font-bold text-[#7A3E00]">Clients</h1>
-        <a href="add_clients">
-            <button class="px-4 py-2 bg-[#FF7F50] text-white rounded hover:bg-[#E67300] w-full md:w-auto">+ Add Client</button>
-        </a>
+      <h1 class="text-2xl font-bold text-[#7A3E00]">Clients</h1>
+      <a href="add_clients">
+          <button class="px-4 py-2 bg-[#FF7F50] text-white rounded hover:bg-[#E67300] w-full md:w-auto">+ Add Client</button>
+      </a>
     </div>
 
     <div class="bg-[#FFF9F0] shadow rounded-lg p-4 mb-4 md:mb-6 border border-[#FFD699] flex flex-col md:flex-row md:items-center md:justify-between gap-2">

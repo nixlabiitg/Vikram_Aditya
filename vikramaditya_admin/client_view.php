@@ -60,7 +60,9 @@
                                 <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zm18.71-10.04a1.003 1.003 0 0 0 0-1.42l-2.5-2.5a1.003 1.003 0 0 0-1.42 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
                             </svg>
                         </button>
+                        
                     </div>
+                    
                     <div class="flex gap-3">
                         <button onclick="window.location.href='appointment_book#step2'" 
                             class="px-5 py-2 rounded-full bg-orange-500 hover:bg-orange-600 text-white text-sm font-medium shadow-md hover:shadow-lg transition">
@@ -73,6 +75,38 @@
                     </div>
                 </div>
             </div>
+            <!-- Rating Footer -->
+            <div class="mt-6 border-t border-orange-200 pt-4 grid grid-cols-1 md:grid-cols-2 text-center gap-4">
+            
+                <!-- Astrologer Rating -->
+                <div>
+                    <p class="text-sm text-gray-600 mb-1">Astrologer Rating</p>
+                    <div class="flex justify-center space-x-1">
+                        <!-- Filled Stars -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 1.5l2.59 5.25 5.91.86-4.25 4.14 1 5.85L10 14.9l-5.25 2.76 1-5.85L1.5 7.61l5.91-.86L10 1.5z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 1.5l2.59 5.25 5.91.86-4.25 4.14 1 5.85L10 14.9l-5.25 2.76 1-5.85L1.5 7.61l5.91-.86L10 1.5z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 1.5l2.59 5.25 5.91.86-4.25 4.14 1 5.85L10 14.9l-5.25 2.76 1-5.85L1.5 7.61l5.91-.86L10 1.5z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 1.5l2.59 5.25 5.91.86-4.25 4.14 1 5.85L10 14.9l-5.25 2.76 1-5.85L1.5 7.61l5.91-.86L10 1.5z"/></svg>
+                        <!-- Empty Star -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-gray-300 fill-current" viewBox="0 0 20 20"><path d="M10 1.5l2.59 5.25 5.91.86-4.25 4.14 1 5.85L10 14.9l-5.25 2.76 1-5.85L1.5 7.61l5.91-.86L10 1.5z"/></svg>
+                    </div>
+                </div>
+
+                <!-- Counsellor Rating -->
+                <div>
+                    <p class="text-sm text-gray-600 mb-1">Counsellor Rating</p>
+                    <div class="flex justify-center space-x-1">
+                        <!-- Filled Stars -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 1.5l2.59 5.25 5.91.86-4.25 4.14 1 5.85L10 14.9l-5.25 2.76 1-5.85L1.5 7.61l5.91-.86L10 1.5z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 1.5l2.59 5.25 5.91.86-4.25 4.14 1 5.85L10 14.9l-5.25 2.76 1-5.85L1.5 7.61l5.91-.86L10 1.5z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 1.5l2.59 5.25 5.91.86-4.25 4.14 1 5.85L10 14.9l-5.25 2.76 1-5.85L1.5 7.61l5.91-.86L10 1.5z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 1.5l2.59 5.25 5.91.86-4.25 4.14 1 5.85L10 14.9l-5.25 2.76 1-5.85L1.5 7.61l5.91-.86L10 1.5z"/></svg>
+                        <!-- Half or empty -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-gray-300 fill-current" viewBox="0 0 20 20"><path d="M10 1.5l2.59 5.25 5.91.86-4.25 4.14 1 5.85L10 14.9l-5.25 2.76 1-5.85L1.5 7.61l5.91-.86L10 1.5z"/></svg>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <div class="grid md:grid-cols-2 gap-6 mb-6">
@@ -121,7 +155,7 @@
     <!-- ===================== Documents ===================== -->
     <div x-show="tab === 'documents'">
         <div class="bg-white shadow-md rounded-xl p-5 border border-orange-200">
-            <h3 class="text-lg font-semibold text-[#7A3E00] mb-4">Documents</h3>
+            <h3 class="text-lg font-semibold text-[#7A3E00] mb-4">Suggestions</h3>
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 <div class="flex flex-col items-center text-center">
                     <svg class="w-12 h-12 text-orange-500 mb-2" fill="currentColor" viewBox="0 0 24 24">
@@ -157,6 +191,26 @@
             </div>
         </div>
         <div class="bg-white shadow-md rounded-xl mt-6 p-5 border border-orange-200">
+            <h3 class="text-lg font-semibold text-[#7A3E00] mb-4">Kushti</h3>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div class="flex flex-col items-center text-center">
+                    <svg class="w-12 h-12 text-orange-500 mb-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M6 2a2 2 0 0 0-2 2v16a2 
+                                2 0 0 0 2 2h12a2 2 0 0 0 
+                                2-2V8l-6-6H6zm7 7V3.5L18.5 
+                                9H13z"/>
+                        <text x="7" y="18" font-size="6" ont-family="Arial" font-weight="bold" 
+                                fill="white">PDF</text>
+                    </svg>
+                    <p class="text-sm font-medium text-gray-700">Kushti.pdf</p>
+                    <span class="text-xs text-gray-500">15 Aug 2025</span>
+                    <a href="docs/proposal_pdf.html" target="_blank" 
+                    class="text-xs text-blue-600 hover:underline mt-1">View</a>
+                </div>
+
+            </div>
+        </div>
+        <div class="bg-white shadow-md rounded-xl mt-6 p-5 border border-orange-200">
             <h3 class="text-lg font-semibold text-[#7A3E00] mb-4">Proposal Sent</h3>
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 <div class="flex flex-col items-center text-center">
@@ -168,12 +222,11 @@
                         <text x="7" y="18" font-size="6" ont-family="Arial" font-weight="bold" 
                                 fill="white">PDF</text>
                     </svg>
-                    <p class="text-sm font-medium text-gray-700">Suggested Remedies.pdf</p>
+                    <p class="text-sm font-medium text-gray-700">Proposal.pdf</p>
                     <span class="text-xs text-gray-500">15 Aug 2025</span>
                     <a href="docs/proposal_pdf.html" target="_blank" 
                     class="text-xs text-blue-600 hover:underline mt-1">View</a>
                 </div>
-
             </div>
         </div>
     </div>

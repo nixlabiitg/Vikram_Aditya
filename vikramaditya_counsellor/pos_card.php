@@ -193,4 +193,5 @@ function printInvoice() {
 }
 </script>
 
+
 <?php include("layouts/footer.php"); ?>

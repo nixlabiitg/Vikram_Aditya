@@ -56,7 +56,7 @@
 
             <!-- Category Card -->
             <label class="cursor-pointer">
-              <input type="radio" name="puja_category" value="Guru Puja" class="hidden peer">
+              <input type="checkbox" name="puja_category" value="Guru Puja" class="hidden peer">
               <div class="h-35 flex flex-col justify-between p-4 bg-gradient-to-br from-[#fffaf6] to-[#ffe2d0] border border-orange-300 rounded-xl shadow peer-checked:border-2 peer-checked:border-orange-700 text-center">
                 <img src="assets/img/puja.png" class="w-15 h-15 mx-auto mb-2">
                 <span class="text-sm font-medium">Guru Puja</span>
@@ -64,7 +64,7 @@
             </label>
 
             <label class="cursor-pointer">
-              <input type="radio" name="puja_category" value="Mangal Puja" class="hidden peer">
+              <input type="checkbox" name="puja_category" value="Mangal Puja" class="hidden peer">
               <div class="h-35 flex flex-col justify-between p-4 bg-gradient-to-br from-[#fffaf6] to-[#ffe2d0] border border-orange-300 rounded-xl shadow peer-checked:border-2 peer-checked:border-orange-700 text-center">
                 <img src="assets/img/puja.png" class="w-15 h-15 mx-auto mb-2">
                 <span class="text-sm font-medium">Mangal Puja</span>
@@ -72,7 +72,7 @@
             </label>
 
             <label class="cursor-pointer">
-              <input type="radio" name="puja_category" value="Rudra Abhishek" class="hidden peer">
+              <input type="checkbox" name="puja_category" value="Rudra Abhishek" class="hidden peer">
               <div class="h-35 flex flex-col justify-between p-4 bg-gradient-to-br from-[#fffaf6] to-[#ffe2d0] border border-orange-300 rounded-xl shadow peer-checked:border-2 peer-checked:border-orange-700 text-center">
                 <img src="assets/img/puja.png" class="w-15 h-15 mx-auto mb-2">
                 <span class="text-sm font-medium">Rudra Abhishek</span>
@@ -80,7 +80,7 @@
             </label>
 
             <label class="cursor-pointer">
-              <input type="radio" name="puja_category" value="Nava Graha Shanti" class="hidden peer">
+              <input type="checkbox" name="puja_category" value="Nava Graha Shanti" class="hidden peer">
               <div class="h-35 flex flex-col justify-between p-4 bg-gradient-to-br from-[#fffaf6] to-[#ffe2d0] border border-orange-300 rounded-xl shadow peer-checked:border-2 peer-checked:border-orange-700 text-center">
                 <img src="assets/img/puja.png" class="w-15 h-15 mx-auto mb-2">
                 <span class="text-sm font-medium">Nava Graha Shanti</span>
@@ -133,8 +133,49 @@
             <option value="08:00-09:00">01:00 PM - 07:00 PM</option>
           </select>
         </div>
+        <script>
+          const categoryCheckboxes = document.querySelectorAll('input[name="puja_category"]');
+          const dateInput = document.querySelector('input[name="puja_date"]');
+          const slotSelect = document.querySelector('select[name="puja_slot"]');
 
-        <!-- Book Button -->
+          const multiPujaContainer = document.createElement('div');
+          multiPujaContainer.id = 'multiPujaContainer';
+          multiPujaContainer.className = 'space-y-4 mt-4';
+          dateInput.parentElement.after(multiPujaContainer);
+
+          function updateDateTimeInputs() {
+            const selectedPujas = Array.from(categoryCheckboxes).filter(c => c.checked);
+
+            if (selectedPujas.length <= 1) {
+              dateInput.parentElement.style.display = 'block';
+              slotSelect.parentElement.style.display = 'block';
+              multiPujaContainer.innerHTML = '';
+            } else {
+              dateInput.parentElement.style.display = 'none';
+              slotSelect.parentElement.style.display = 'none';
+
+              multiPujaContainer.innerHTML = '';
+              selectedPujas.forEach(puja => {
+                const div = document.createElement('div');
+                div.className = 'space-y-2 p-2 border border-orange-200 rounded-xl bg-white/80';
+                div.innerHTML = `
+                  <p class="text-sm font-semibold text-gray-700">${puja.value} - Choose Date</p>
+                  <input type="date" name="puja_date_${puja.value}" class="w-full p-3 border border-orange-300 rounded-lg bg-gradient-to-br from-[#fffaf6] to-[#ffe9d6] shadow-sm text-gray-700">
+                  <p class="text-sm font-semibold text-gray-700 mt-2">${puja.value} - Choose Time Slot</p>
+                  <select name="puja_slot_${puja.value}" class="w-full p-3 border border-orange-300 rounded-lg bg-gradient-to-br from-[#fffaf6] to-[#ffe9d6] shadow-sm text-gray-700">
+                    <option value="">-- Select Slot --</option>
+                    <option value="06:00-07:00">09:00 AM - 12:00 PM</option>
+                    <option value="08:00-09:00">01:00 PM - 07:00 PM</option>
+                  </select>
+                `;
+                multiPujaContainer.appendChild(div);
+              });
+            }
+          }
+
+          categoryCheckboxes.forEach(c => c.addEventListener('change', updateDateTimeInputs));
+          </script>
+
         <div class="text-center">
           <button onclick="confirmBooking()" class="px-6 py-3 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-xl font-semibold shadow-lg hover:scale-105 transition">
              Book Puja
@@ -143,9 +184,7 @@
       </div>
     </div>
 
-    <!-- Right Section -->
     <div class="space-y-6">
-      <!-- Booking Summary -->
       <div class="bg-white/90 backdrop-blur rounded-2xl shadow-lg border border-orange-200">
         <div class="p-4 border-b border-orange-200 flex justify-between items-center">
           <h3 class="font-semibold text-gray-800">Booking Summary</h3>
@@ -154,13 +193,11 @@
         <div class="p-6 text-gray-400 text-center">No Data Found</div>
       </div>
 
-      <!-- Booked Members -->
       <div class="bg-white/90 backdrop-blur rounded-2xl shadow-lg border border-orange-200">
         <div class="p-4 border-b border-orange-200 font-semibold text-gray-800">Booked Members</div>
         <div id="booked-members" class="p-6 text-gray-400 text-center">No Data Found</div>
       </div>
 
-      <!-- Mini Dashboard -->
       <div class="bg-white/90 backdrop-blur rounded-2xl shadow-lg border border-orange-200">
         <div class="p-4 border-b border-orange-200 font-semibold text-gray-800">Mini Dashboard</div>
         <div class="p-6 text-sm space-y-2">
@@ -174,14 +211,12 @@
     </div>
   </div>
   <div x-data="{ tab: 'booked' }" class="p-6">
-  <!-- Heading -->
   <div class="flex justify-between items-center mb-6">
     <h1 class="text-xl font-bold text-[#7A3E00] flex items-center gap-2">
       Booking Details
     </h1>
   </div>
 
-  <!-- Success Alert -->
   <div id="successAlert" class="hidden bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded flex items-center justify-between mb-4" role="alert">
       <div>
           <span class="font-bold">Success!</span>
@@ -266,7 +301,7 @@
 </div>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  const pujaRadios = document.querySelectorAll("input[name='puja_category']");
+  const pujacheckboxs = document.querySelectorAll("input[name='puja_category']");
   const bookedContainer = document.querySelector("#booked-members");
   const availableSlots = document.querySelector("#available-slots");
   const slotsFilled = document.querySelector("#slots-filled");
@@ -299,9 +334,9 @@ document.addEventListener("DOMContentLoaded", () => {
     "Nava Graha Shanti": { total: 5, booked: [] }
   };
 
-  pujaRadios.forEach(radio => {
-    radio.addEventListener("change", () => {
-      const selected = radio.value;
+  pujacheckboxs.forEach(checkbox => {
+    checkbox.addEventListener("change", () => {
+      const selected = checkbox.value;
       const data = pujaSlots[selected];
 
       totalBookings.textContent = data.booked.length;
@@ -324,7 +359,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 function confirmBooking() {
-    window.location.href = "puja_booked_client?success=1";
+    window.location.href = "puja_waiting?success=1";
 }
 </script>
 

@@ -6,11 +6,11 @@
     </div>
 
     <div class="bg-[#FFF9F0] shadow rounded-lg p-4 mb-4 md:mb-6 border border-[#FFD699] flex flex-col md:flex-row md:items-center md:justify-between gap-2">
-      <input type="text" placeholder="Search Clients." class="border border-gray-300 rounded px-4 py-2 w-full md:w-64 focus:outline-none focus:ring-2 focus:ring-orange-300 focus:border-orange-400" />
-      <select class="border border-gray-300 rounded px-4 py-2 w-full md:w-auto">
-          <option value="">All</option>
-          <option value="active">Active</option>
-          <option value="inactive">Inactive</option>
+      <input type="text" placeholder="Search Team Member..." class="border border-gray-300 rounded px-4 py-2 w-full md:w-64 focus:outline-none focus:ring-2 focus:ring-orange-300 focus:border-orange-400" />
+      <select class="border border-gray-300 rounded px-4 py-2 w-full md:w-auto focus:outline-none focus:ring-2 focus:ring-orange-300 focus:border-orange-400">
+        <option value="">All</option>
+        <option value="active">Active</option>
+        <option value="inactive">Inactive</option>
       </select>
     </div>
 
@@ -129,4 +129,38 @@ function hideTeamDetail() {
     document.getElementById('team-detail').classList.add('hidden');
 }
 </script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.querySelector('input[placeholder="Search Team Member..."]');
+    const statusFilter = document.querySelector('select');
+
+    function filterTeamMembers() {
+        const searchValue = searchInput.value.toLowerCase().trim();
+        const statusValue = statusFilter.value.toLowerCase().trim();
+
+        const rows = document.querySelectorAll('tbody tr');
+
+        rows.forEach(row => {
+            const cells = row.querySelectorAll('td');
+
+            const name = cells[0]?.textContent.toLowerCase().trim() || '';
+            const status = cells[4]?.textContent.toLowerCase().trim() || '';
+
+            const matchesSearch = name.includes(searchValue);
+
+            const matchesStatus =
+                statusValue === '' ||
+                (statusValue === 'active' && status === 'active') ||
+                (statusValue === 'inactive' && status === 'inactive');
+
+            row.style.display = (matchesSearch && matchesStatus) ? '' : 'none';
+        });
+    }
+
+    searchInput.addEventListener('input', filterTeamMembers);
+    statusFilter.addEventListener('change', filterTeamMembers);
+});
+</script>
+
+
 <?php include("layouts/footer.php");

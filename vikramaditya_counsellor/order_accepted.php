@@ -1,7 +1,10 @@
 <?php include("layouts/header.php"); ?>
 
 <div class="p-6 min-h-screen">
-  <h1 class="text-2xl font-bold text-[#7A3E00] mb-6">Accepted Orders</h1>
+  <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-4 md:mb-6 space-y-2 md:space-y-0">
+    <h1 class="text-2xl font-bold text-[#7A3E00]">Accepted Order</h1>
+    <input type="text" placeholder="Search Order ID..." class="bg-white border border-gray-300 rounded px-4 py-2 w-full md:w-64 focus:outline-none focus:ring-2 focus:ring-orange-300 focus:border-orange-400" />
+  </div>
 
   <div class="overflow-x-auto bg-white rounded-xl shadow border border-gray-300">
     <table class="w-full border-collapse">

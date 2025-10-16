@@ -11,7 +11,8 @@
   </div>
 
   <!-- Top Navigation Tabs -->
-  <div class="flex space-x-6 border-b border-[#FFD699] mb-6" id="tabs">
+  <div class="overflow-x-auto scrollbar-hide">
+  <div class="flex space-x-4 border-b border-[#FFD699] mb-6" id="tabs">
     <!-- Users -->
     <button class="tab-btn flex items-center gap-2 py-2 px-4 text-[#7A3E00] font-medium border-b-2 border-transparent hover:border-[#E67300]" data-tab="users">
       <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -35,6 +36,14 @@
       </svg>
       Services
     </button>
+    
+    <!-- Appointment Booking -->
+    <button class="tab-btn flex items-center gap-2 py-2 px-4 text-[#7A3E00] font-medium border-b-2 border-transparent hover:border-[#E67300]" data-tab="appointment">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10m-12 4h14m-14 4h14M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+      </svg>
+      Appointment
+    </button>
 
     <!-- Integrations -->
     <button class="tab-btn flex items-center gap-2 py-2 px-4 text-[#7A3E00] font-medium border-b-2 border-transparent hover:border-[#E67300]" data-tab="integrations">
@@ -52,6 +61,7 @@
       </svg>
       Workflow
     </button>
+  </div>
   </div>
 
   <!-- Content Sections -->
@@ -88,6 +98,34 @@
       </ul>
       <button onclick="openServiceModal()" class="mt-4 bg-[#E67300] text-white px-4 py-2 rounded-lg hover:bg-[#A05000]">+ Add Service</button>
     </div>
+
+    <!-- Appointment Booking -->
+    <div class="tab-pane hidden bg-white rounded-xl shadow p-6" id="appointment">
+      <h2 class="text-lg font-semibold text-[#A05000] mb-3">Appointment Booking</h2>
+
+      <!-- Maximum Appointments Per Day -->
+      <div class="mb-4">
+        <label for="dailyAppointments" class="block text-gray-700 font-medium mb-1">Maximum number of Appointments Per Day</label>
+        <input type="number" id="dailyAppointments" name="dailyAppointments" placeholder="e.g. 20"
+          class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#E67300] focus:border-[#E67300] text-sm">
+      </div>
+
+      <!-- Maximum Kushti (Kundli) Per Day -->
+      <div class="mb-4">
+        <label for="dailyKushti" class="block text-gray-700 font-medium mb-1">Maximum number of Kushti Per Day</label>
+        <input type="number" id="dailyKushti" name="dailyKushti" placeholder="e.g. 10"
+          class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#E67300] focus:border-[#E67300] text-sm">
+      </div>
+
+      <!-- Save Settings Button -->
+      <div class="text-right">
+        <button onclick="saveAppointmentSettings()"
+          class="mt-2 bg-[#E67300] hover:bg-[#A05000] text-white px-4 py-2 rounded-lg text-sm font-medium">
+          Save Settings
+        </button>
+      </div>
+    </div>
+
 
     <!-- Integrations -->
     <div class="tab-pane hidden bg-white rounded-xl shadow p-6" id="integrations">
@@ -236,9 +274,8 @@ document.getElementById("integrationForm").addEventListener("submit", function(e
   const smtpPass = e.target.smtpPass.value;
   const gateway = e.target.paymentGateway.value;
 
-  alert(`Integrations Updated ✅\nWhatsApp API: ${whatsappApi}\nSMTP: ${smtp}\nGateway: ${gateway}`);
+  alert(`Integrations Updated \nWhatsApp API: ${whatsappApi}\nSMTP: ${smtp}\nGateway: ${gateway}`);
 
-  // 🔗 You can send this data to backend via AJAX/PHP here
 
   closeIntegrationModal();
 });
@@ -302,9 +339,8 @@ document.getElementById("workflowForm").addEventListener("submit", function(e) {
   const leadAssignment = e.target.leadAssignment.value;
   const birthdayTime = e.target.birthdayTime.value;
 
-  alert(`Workflow Updated ✅\nReminder: ${reminderDays} days\nLeads: ${leadAssignment}\nBirthday: ${birthdayTime}`);
+  alert(`Workflow Updated\nReminder: ${reminderDays} days\nLeads: ${leadAssignment}\nBirthday: ${birthdayTime}`);
 
-  // 🔗 Send to backend via AJAX/PHP here
 
   closeWorkflowModal();
 });
@@ -327,6 +363,22 @@ document.getElementById("workflowForm").addEventListener("submit", function(e) {
 
   // Default active tab
   tabBtns[0].click();
+</script>
+<script>
+function saveAppointmentSettings() {
+  const dailyAppointments = document.getElementById('dailyAppointments').value;
+  const dailyKushti = document.getElementById('dailyKushti').value;
+
+  if (!dailyAppointments || !dailyKushti) {
+    alert('Please enter all values');
+    return;
+  }
+
+  localStorage.setItem('dailyAppointments', dailyAppointments);
+  localStorage.setItem('dailyKushti', dailyKushti);
+
+  alert('Appointment settings saved successfully!');
+}
 </script>
 
 <?php include("layouts/footer.php"); ?>

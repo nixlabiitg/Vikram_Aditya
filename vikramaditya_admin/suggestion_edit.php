@@ -71,83 +71,125 @@
     <div x-show="tab === 'profile'">
       <div class="bg-white rounded-xl shadow p-6">
         <form class="space-y-6" onsubmit="return saveprofile(event);">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div>
-                  <label class="block text-gray-700 font-medium mb-1">Full Name</label>
-                  <input type="text" class="w-full border border-gray-300 rounded px-4 py-2" placeholder="Rajesh Kumar">
-                </div>
-                <div>
-                  <label class="block text-gray-700 font-medium mb-1">Phone Number</label>
-                  <input type="text" class="w-full border border-gray-300 rounded px-4 py-2" placeholder="+919876543210">
-                </div>
-                <div>
-                  <label class="block text-gray-700 font-medium mb-1">Email</label>
-                  <input type="email" class="w-full border border-gray-300 rounded px-4 py-2" placeholder="rajesh@gmail.com">
-                </div>
-                <div>
-                  <label class="block text-gray-700 font-medium mb-1">Date of Birth</label>
-                  <input type="date" class="w-full border border-gray-300 rounded px-4 py-2">
-                </div>
-                <div>
-                  <label class="block text-gray-700 font-medium mb-1">Age</label>
-                  <input type="text" class="w-full border border-gray-300 rounded px-4 py-2" placeholder="">
-                </div>
-                <div>
-                  <label class="block text-gray-700 font-medium mb-1">Time of Birth</label>
-                  <input type="time" class="w-full border border-gray-300 rounded px-4 py-2">
-                </div>
-                <div>
-                  <label class="block text-gray-700 font-medium mb-1">Place of Birth</label>
-                  <input type="text" class="w-full border border-gray-300 rounded px-4 py-2" placeholder="City, Country">
-                </div>
-                <div>
-                  <label class="block text-gray-700 font-medium mb-1">Address</label>
-                  <input type="text" class="w-full border border-gray-300 rounded px-4 py-2" placeholder="123 Main St, City, Country"> 
-                </div>
-                <div class="w-full">
-                  <label class="block text-[#7A3E00] font-semibold mb-2">Gender</label>
-                  <div class="flex flex-wrap gap-4">
-                      
-                    <!-- Female -->
-                    <label class="flex items-center space-x-2 cursor-pointer">
-                      <input type="radio" name="gender" value="female" class="hidden peer">
-                      <div class="h-5 w-5 rounded-full border-2 border-gray-400 
-                        peer-checked:border-[#7A3E00] peer-checked:bg-[#7A3E00]"></div>
-                      <span>Female</span>
-                    </label>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div>
+              <label class="block text-gray-700 font-medium mb-1">Full Name</label>
+              <input type="text" class="w-full border border-gray-300 rounded px-4 py-2" placeholder="Rajesh Kumar">
+            </div>
+            <div>
+              <label class="block text-gray-700 font-medium mb-1">Phone Number</label>
+              <input type="text" class="w-full border border-gray-300 rounded px-4 py-2" placeholder="+919876543210">
+            </div>
+            <div>
+              <label class="block text-gray-700 font-medium mb-1">Email</label>
+              <input type="email" class="w-full border border-gray-300 rounded px-4 py-2" placeholder="rajesh@gmail.com">
+            </div>
+            <div>
+              <label class="block text-gray-700 font-medium mb-1">Date of Birth</label>
+              <input type="date" class="w-full border border-gray-300 rounded px-4 py-2">
+            </div>
+            <div>
+              <label class="block text-gray-700 font-medium mb-1">Age</label>
+              <input type="text" class="w-full border border-gray-300 rounded px-4 py-2" placeholder="">
+            </div>
+            <div>
+              <label class="block text-gray-700 font-medium mb-1">Time of Birth</label>
+              <input type="time" class="w-full border border-gray-300 rounded px-4 py-2">
+            </div>
+            <div>
+              <label class="block text-gray-700 font-medium mb-1">Place of Birth</label>
+              <input type="text" class="w-full border border-gray-300 rounded px-4 py-2" placeholder="City, Country">
+            </div>
+            <div>
+              <label class="block text-gray-700 font-medium mb-1">Address</label>
+              <input type="text" class="w-full border border-gray-300 rounded px-4 py-2" placeholder="123 Main St, City, Country"> 
+            </div>
+            <div class="w-full">
+              <label class="block text-gray-700 font-semibold mb-2">Gender</label>
+              <div class="flex flex-wrap gap-4">
+                  
+                <!-- Female -->
+                <label class="flex items-center space-x-2 cursor-pointer">
+                  <input type="radio" name="gender" value="female" class="hidden peer">
+                  <div class="h-5 w-5 rounded-full border-2 border-gray-400 
+                    peer-checked:border-[#7A3E00] peer-checked:bg-[#7A3E00]"></div>
+                  <span>Female</span>
+                </label>
 
-                    <!-- Male -->
-                    <label class="flex items-center space-x-2 cursor-pointer">
-                      <input type="radio" name="gender" value="male" class="hidden peer">
-                      <div class="h-5 w-5 rounded-full border-2 border-gray-400 
-                        peer-checked:border-[#7A3E00] peer-checked:bg-[#7A3E00]"></div>
-                      <span>Male</span>
-                    </label>
+                <!-- Male -->
+                <label class="flex items-center space-x-2 cursor-pointer">
+                  <input type="radio" name="gender" value="male" class="hidden peer">
+                  <div class="h-5 w-5 rounded-full border-2 border-gray-400 
+                    peer-checked:border-[#7A3E00] peer-checked:bg-[#7A3E00]"></div>
+                  <span>Male</span>
+                </label>
 
-                    <!-- Other -->
-                    <label class="flex items-center space-x-2 cursor-pointer">
-                      <input type="radio" name="gender" value="other" class="hidden peer">
-                      <div class="h-5 w-5 rounded-full border-2 border-gray-400 
-                        peer-checked:border-[#7A3E00] peer-checked:bg-[#7A3E00]"></div>
-                      <span>Other</span>
-                    </label>
-                    
-                  </div>
-                </div>
-
+                <!-- Other -->
+                <label class="flex items-center space-x-2 cursor-pointer">
+                  <input type="radio" name="gender" value="other" class="hidden peer">
+                  <div class="h-5 w-5 rounded-full border-2 border-gray-400 
+                    peer-checked:border-[#7A3E00] peer-checked:bg-[#7A3E00]"></div>
+                  <span>Other</span>
+                </label>
                 
+              </div>
             </div>
+          </div>
+          <div>
+              <label class="block text-gray-700 font-medium mb-1">Additional Notes</label>
+              <textarea class="w-full border border-gray-300 rounded px-4 py-2" rows="4" placeholder="Enter any remarks or client requirements..."></textarea>
+          </div>
+          <div>
+            <label class="block text-gray-700 font-medium mb-1">Rate the Client</label>
+            <div class="flex items-center gap-2">
+              <span class="star cursor-pointer text-gray-300 text-4xl transition transform hover:scale-110" data-value="1">★</span>
+              <span class="star cursor-pointer text-gray-300 text-4xl transition transform hover:scale-110" data-value="2">★</span>
+              <span class="star cursor-pointer text-gray-300 text-4xl transition transform hover:scale-110" data-value="3">★</span>
+              <span class="star cursor-pointer text-gray-300 text-4xl transition transform hover:scale-110" data-value="4">★</span>
+              <span class="star cursor-pointer text-gray-300 text-4xl transition transform hover:scale-110" data-value="5">★</span>
+              <input type="hidden" name="clientRating" id="clientRating" value="0">
+            </div>
+          </div>
 
-            <div>
-                <label class="block text-gray-700 font-medium mb-1">Additional Notes</label>
-                <textarea class="w-full border border-gray-300 rounded px-4 py-2" rows="4" placeholder="Enter any remarks or client requirements..."></textarea>
-            </div>
+          <script>
+          const stars = document.querySelectorAll('.star');
+          const ratingInput = document.getElementById('clientRating');
 
-            <div>
-                <button type="submit" class="px-4 py-2 bg-[#FF7F50] text-white rounded hover:bg-[#E67300]">Update Profile</button>
-            </div>
+          stars.forEach(star => {
+            star.addEventListener('click', () => {
+              const rating = parseInt(star.getAttribute('data-value'));
+              ratingInput.value = rating;
+              updateStars(rating);
+            });
+
+            star.addEventListener('mouseover', () => {
+              updateStars(parseInt(star.getAttribute('data-value')));
+            });
+
+            star.addEventListener('mouseout', () => {
+              updateStars(parseInt(ratingInput.value));
+            });
+          });
+
+          function updateStars(rating) {
+            stars.forEach(star => {
+              const value = parseInt(star.getAttribute('data-value'));
+              if (value <= rating) {
+                star.classList.add('text-orange-600');
+                star.classList.remove('text-gray-300');
+              } else {
+                star.classList.add('text-gray-300');
+                star.classList.remove('text-orange-600');
+              }
+            });
+          }
+          </script>
+
+          <div>
+              <button type="submit" class="px-4 py-2 bg-[#FF7F50] text-white rounded hover:bg-[#E67300]">Update Profile</button>
+          </div>
         </form>
-    </div>
+      </div>
     </div>
     <!-- Entry -->
     <div x-show="tab === 'problem'">

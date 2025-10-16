@@ -5,7 +5,7 @@
   <div x-data="{ tab: 'booked' }" class="p-6">
     <!-- Heading -->
     <div class="flex justify-between items-center mb-6">
-      <h1 class="text-3xl font-bold text-[#7A3E00] flex items-center gap-2">
+      <h1 class="text-xl font-bold text-[#7A3E00] flex items-center gap-2">
         <svg viewBox="0 0 24 24" class="w-12 h-12 text-orange-600" aria-hidden="true">
           <path fill="currentColor" d="M5 15h14l-1.2 4.2a2 2 0 0 1-1.92 1.4H8.12a2 2 0 0 1-1.92-1.4L5 15z"/>
           <rect x="4" y="13" width="16" height="2" rx="0.5" fill="currentColor"/>

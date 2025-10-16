@@ -85,9 +85,9 @@
             <h2 class="font-semibold text-orange-700 flex items-center gap-2 text-sm">
                 Select Item
             </h2>
-            <button onclick="openAddItemModal()" 
+            <button onclick="addConsultationFee()"
                 class="bg-orange-500 text-white px-3 py-1.5 rounded-lg hover:bg-orange-600 text-xs font-medium">
-                + Add Item
+                + Consultation Fee
             </button>
         </div>
 
@@ -218,6 +218,11 @@
     { id: "C002", name: "Priya Verma", phone: "9123456780" },
     { id: "C003", name: "Amit Kumar", phone: "9988776655" }
   ];
+  const CONSULTATION_FEE_ITEM = {
+  name: "Consultation Fee",
+  type: "Consultation",
+  price: 500
+};
 
   function searchClient() {
     const input = document.getElementById("client-search").value.toLowerCase();
@@ -266,12 +271,23 @@
   const totalAmountEl = document.getElementById("total-amount");
   let cart = [];
 
-  function addItem(name, type, price) {
-    let existing = cart.find(item => item.name === name);
-    if (existing) existing.qty += 1;
-    else cart.push({ name, type, price, qty: 1 });
+  function addConsultationFee() {
+  if (!cart.find(item => item.name === CONSULTATION_FEE_ITEM.name)) {
+    cart.push({ ...CONSULTATION_FEE_ITEM });
     renderCart();
   }
+}
+  function addItem(name, type, price) {
+  if (cart.length === 0 && name !== CONSULTATION_FEE_ITEM.name) {
+    cart.push({ ...CONSULTATION_FEE_ITEM });
+  }
+
+  let existing = cart.find(item => item.name === name);
+  if (existing) existing.qty = (existing.qty || 1) + 1;
+  else cart.push({ name, type, price, qty: 1 });
+
+  renderCart();
+}
 
   function removeItem(name) {
     cart = cart.filter(item => item.name !== name);
@@ -283,22 +299,15 @@
   let total = 0;
 
   cart.forEach((item, index) => {
-    let itemTotal = item.price * item.qty;
+    let qty = item.qty || 1; // default to 1 if qty not set
+    let itemTotal = item.price * qty;
     total += itemTotal;
 
     cartBody.innerHTML += `
       <tr class="hover:bg-orange-50">
         <td class="p-3">${item.name}</td>
         <td class="p-3">${item.type}</td>
-        <td class="p-3 text-center">
-          <input 
-            type="number" 
-            min="1" 
-            value="${item.qty}" 
-            class="w-16 border border-gray-300 rounded text-center"
-            onchange="updateQty(${index}, this.value)"
-          />
-        </td>
+        <td class="p-3 text-center">${item.name === 'Consultation Fee' ? 1 : `<input type="number" min="1" value="${qty}" class="w-16 border border-gray-300 rounded text-center" onchange="updateQty(${index}, this.value)" />`}</td>
         <td class="p-3">₹${item.price}</td>
         <td class="p-3">₹${itemTotal}</td>
         <td class="p-3 text-center">
@@ -335,8 +344,8 @@ function updateQty(index, newQty) {
   document.getElementById(`${tab}-grid`).classList.remove("hidden");
   document.getElementById(`tab-${tab}`).classList.add("text-orange-700","border-b-2","border-orange-600");
 }
-
 </script>
+
 <script>
 (function(){
   const btn = document.getElementById("fullscreen-btn");
