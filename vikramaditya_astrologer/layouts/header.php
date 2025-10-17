@@ -7,9 +7,9 @@
     $repairPages = ['repair_dashboard','repair_detail','repair_intake','repair_module','repair_timeline','repair_setting'];
     $complainPages = ['complain_dashboard','complain','complain_entry','complain_feedback','catagory_wise_analytics','staff_performance','complain_tracker','complain_resolution'];
     $orderPages = ['order_referred','order_cart','order_accepted','order_completed'];
-    $pujaPages =  ['puja_referred','puja_cart','puja_accepted','puja_completed','puja','puja_booked_client'];
+    $pujaPages =  ['puja_all','puja_waiting','puja_booked','puja_completed','puja','puja_booked_client'];
+    $kavachPages =  ['kavach_buy','kavach_submit','kavach_shuddhikaran','kavach_preparation'];
     
-
     $isClientsOpen = in_array($currentPage, ['all_clients', 'client_active', 'client_inactive','client_add_promises','client_promises']);
     $isAppointmentOpen = in_array($currentPage, ['appointment','appointment_upcoming','appointment_book','all_appointments','appointment_today']);
     $isTeamOpen = in_array($currentPage, ['team','view_team','add_team','task']);
@@ -17,7 +17,8 @@
     $isRepairOpen = in_array($currentPage, ['repair_dashboard','repair_detail','repair_intake','repair_module','repair_timeline','repair_setting']);
     $isComplainOpen = in_array($currentPage, ['complain_dashboard','complain','complain_entry','complain_feedback','catagory_wise_analytics','staff_performance','complain_tracker','complain_resolution']);
     $isOrderOpen = in_array($currentPage, ['order_referred','order_cart','order_accepted','order_completed']);
-    $isPujaOpen = in_array($currentPage, ['puja_referred','puja_cart','puja_accepted','puja_completed','puja','puja_booked_client']);
+    $isPujaOpen = in_array($currentPage, ['puja_all','puja_waiting','puja_booked','puja_completed','puja','puja_booked_client']);
+    $isKavachOpen = in_array($currentPage, ['kavach_buy','kavach_submit','kavach_shuddhikaran','kavach_preparation']);
     ?>
 <html>
   <head>
@@ -306,6 +307,29 @@
 
                     </div></a>
                     <p class="text-white text-sm font-medium leading-normal"><a href="POS">POS</a></p>
+                  </div>
+
+                  <div class="flex flex-col" x-data="{ open: <?php echo $isKavachOpen ? 'true' : 'false'; ?> }">
+                    <div @click="open = !open" class="flex items-center gap-3 px-4 py-2 cursor-pointer hover:bg-[#3B3023] rounded-full transition-colors duration-200 <?php echo in_array($currentPage, $kavachPages) ? 'bg-[#3a3027]' : 'hover:bg-[#3B3023] rounded-full' ?>">
+                      <div class="text-white" data-icon="Nut" data-size="24px" data-weight="regular">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                          <path
+                          d="M128,80a48,48,0,1,0,48,48A48.06,48.06,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Zm95.68-93.85L135.68,18a15.88,15.88,0,0,0-15.36,0l-88,48.17a16,16,0,0,0-8.32,14v95.64a16,16,0,0,0,8.32,14l88,48.17a15.88,15.88,0,0,0,15.36,0l88-48.17h0a16,16,0,0,0,8.32-14V80.18A16,16,0,0,0,223.68,66.15ZM128,224,40,175.82V80.18L128,32l88,48.17v95.64Z"
+                          ></path>
+                        </svg>
+                      </div>
+                      <p class="text-white text-sm font-medium leading-normal">Kavach</p>
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                              d="M12 2l7 4v6c0 5-3 9-7 10-4-1-7-5-7-10V6l7-4z" />
+                      </svg>
+                    </div>
+                    <div x-show="open" x-transition class="ml-10 mt-1 space-y-1 text-sm text-[#ffb366]">
+                      <a href="kavach_buy" class="block py-1 hover:text-white <?php echo $currentPage == 'kavach_buy' ? 'text-white' : 'hover:text-white' ?>">Buy Kavach</a>
+                      <a href="kavach_submit" class="block py-1 hover:text-white <?php echo $currentPage == 'kavach_submit' ? 'text-white' : 'hover:text-white' ?>">Submit Kavach</a>
+                      <a href="kavach_shuddhikaran" class="block py-1 hover:text-white <?php echo $currentPage == 'kavach_shuddhikaran' ? 'text-white' : 'hover:text-white' ?>">kavach Shuddhikaran</a>
+                      <a href="kavach_preparation" class="block py-1 hover:text-white <?php echo $currentPage == 'kavach_preparation' ? 'text-white' : 'hover:text-white' ?>">Kavach preparation</a>
+                    </div>  
                   </div>
 
                   <div class="flex flex-col" x-data="{ open: <?php echo $isRepairOpen ? 'true' : 'false'; ?> }">
