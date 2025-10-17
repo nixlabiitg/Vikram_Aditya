@@ -43,6 +43,7 @@
                     :class="{
                         'bg-red-200 text-red-700': getOverallStatus(client) === 'Waiting',
                         'bg-yellow-200 text-yellow-700': getOverallStatus(client) === 'Suggested',
+                        'bg-blue-200 text-blue-700': getOverallStatus(client) === 'Interested',
                         'bg-green-200 text-green-700': getOverallStatus(client) === 'Completed'
                     }"
                     x-text="getOverallStatus(client)"
@@ -130,6 +131,7 @@
                             :class="{
                             'bg-red-200 text-red-700': puja.status === 'Waiting',
                             'bg-yellow-200 text-yellow-700': puja.status === 'Suggested',
+                            'bg-blue-200 text-blue-700': puja.status === 'Interested',
                             'bg-green-200 text-green-700': puja.status === 'Completed'
                             }"
                             x-text="puja.status"
@@ -140,7 +142,7 @@
                         <td class="px-3 py-2">₹<span x-text="puja.price"></span></td>
                         <td class="px-3 py-2 text-center">
                         <button
-                            x-show="puja.status === 'Waiting' || puja.status === 'Suggested'"
+                            x-show="puja.status === 'Waiting' || puja.status === 'Suggested' || puja.status === 'Interested'"
                             class="bg-green-600 text-white px-3 py-1 rounded text-xs hover:bg-green-700"
                         >
                             Book Now
@@ -180,6 +182,13 @@
                     date: "28 Oct 2025",
                     time: "5:00 PM",
                     price: "1800",
+                },
+                {
+                    pujaName: "Laxmi Puja",
+                    status: "Interested",
+                    date: "29 Oct 2025",
+                    time: "5:00 PM",
+                    price: "2300",
                 },
                 ],
                 note: "",
@@ -229,6 +238,24 @@
                 noteInput: "",
                 showNote: false,
             },
+            {
+                id: 4,
+                name: "Ankit",
+                clientId: "VGJUN202518",
+                phone: "9870871616",
+                pujas: [
+                {
+                    pujaName: "Laxmi Puja",
+                    status: "Interested",
+                    date: "29 Oct 2025",
+                    time: "5:00 PM",
+                    price: "2300",
+                },
+                ],
+                note: "",
+                noteInput: "",
+                showNote: false,
+            },
             ],
             openDetail(client) {
             this.selectedClient = client;
@@ -244,10 +271,10 @@
             toggleNoteView(client) {
             client.showNote = !client.showNote;
             },
-            // Helper to show overall status if multiple pujas
             getOverallStatus(client) {
             if (client.pujas.some((p) => p.status === "Waiting")) return "Waiting";
             if (client.pujas.some((p) => p.status === "Suggested")) return "Suggested";
+            if (client.pujas.some((p) => p.status === "Interested")) return "Interested";
             return "Completed";
             },
         };

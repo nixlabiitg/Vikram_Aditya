@@ -7,7 +7,7 @@
     $repairPages = ['repair_dashboard','repair_detail','repair_intake','repair_module','repair_timeline','repair_setting'];
     $complainPages = ['complain_dashboard','complain','complain_entry','complain_feedback','catagory_wise_analytics','staff_performance','complain_tracker','complain_resolution'];
     $orderPages = ['order_referred','order_cart','order_accepted','order_completed'];
-    $pujaPages =  ['puja_all','puja_waiting','puja_booked','puja_completed','puja','puja_booked_client'];
+    $pujaPages =  ['puja_all','puja_waiting','puja_booked','puja_completed','puja'];
     $kavachPages =  ['kavach_buy','kavach_submit','kavach_shuddhikaran','kavach_preparation'];
     
 
@@ -18,7 +18,7 @@
     $isRepairOpen = in_array($currentPage, ['repair_dashboard','repair_detail','repair_intake','repair_module','repair_timeline','repair_setting']);
     $isComplainOpen = in_array($currentPage, ['complain_dashboard','complain','complain_entry','complain_feedback','catagory_wise_analytics','staff_performance','complain_tracker','complain_resolution']);
     $isOrderOpen = in_array($currentPage, ['order_referred','order_cart','order_accepted','order_completed']);
-    $isPujaOpen = in_array($currentPage, ['puja_all','puja_waiting','puja_booked','puja_completed','puja','puja_booked_client']);
+    $isPujaOpen = in_array($currentPage, ['puja_all','puja_waiting','puja_booked','puja_completed','puja']);
     $isKavachOpen = in_array($currentPage, ['kavach_buy','kavach_submit','kavach_shuddhikaran','kavach_preparation']);
     ?>
 <html>
@@ -312,8 +312,6 @@
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                                 d="M12 2l7 4v6c0 5-3 9-7 10-4-1-7-5-7-10V6l7-4z" />
                         </svg>
-
-
                       </div>
                       <p class="text-white text-sm font-medium leading-normal">Kavach</p>
                       <svg class="ml-auto w-4 h-4 transform transition-transform duration-300"
@@ -440,7 +438,7 @@
                       <a href="puja_waiting" class="block py-1 hover:text-white <?php echo $currentPage == 'puja_waiting' ? 'text-white' : 'hover:text-white' ?>">Waiting</a>
                       <a href="puja_booked" class="block py-1 hover:text-white <?php echo $currentPage == 'puja_booked' ? 'text-white' : 'hover:text-white' ?>">Booked</a>
                       <a href="puja_completed" class="block py-1 hover:text-white <?php echo $currentPage == 'puja_completed' ? 'text-white' : 'hover:text-white' ?>">Completed</a>
-                      <a href="puja_booked_client" class="block py-1 hover:text-white <?php echo $currentPage == 'puja_booked_client' ? 'text-white' : 'hover:text-white' ?>">Bookings</a>                       
+                     
                     </div>
                   </div>
 

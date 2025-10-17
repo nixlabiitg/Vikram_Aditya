@@ -1193,6 +1193,12 @@
         });
       </script>
 
+      <!-- Interested Checkbox -->
+      <div class="mb-4 flex items-center">
+        <input type="checkbox" id="interestedCheckbox" class="w-5 h-5 text-orange-600 border-gray-300 rounded focus:ring-[#7A3E00]">
+        <label for="interestedCheckbox" class="ml-2 text-sm text-gray-700">Interested</label>
+      </div>
+
       <!-- Note -->
       <div class="flex gap-3">
         <input type="text" placeholder="Enter note for Puja"
