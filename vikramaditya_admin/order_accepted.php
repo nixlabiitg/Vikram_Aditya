@@ -142,5 +142,23 @@ function removeItem(orderIndex, itemIndex) {
 
 renderAcceptedOrders();
 </script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const searchInput = document.querySelector('input[placeholder="Search Order ID..."]');
+  const tableRows = document.querySelectorAll('tbody tr');
 
+  function filterOrders() {
+    const searchValue = searchInput.value.toLowerCase().trim();
+
+    tableRows.forEach(row => {
+      const orderIdCell = row.querySelectorAll('td')[3];
+      const orderId = orderIdCell ? orderIdCell.textContent.toLowerCase().trim() : '';
+
+      row.style.display = orderId.includes(searchValue) || searchValue === '' ? '' : 'none';
+    });
+  }
+
+  searchInput.addEventListener('input', filterOrders);
+});
+</script>
 <?php include("layouts/footer.php"); ?>

@@ -37,7 +37,6 @@
 </section>
 
 <script>
-  // Dummy client database
   const clientDatabase = {
     "C101": { name: "Rahul Sharma", phone: "9876543210", address: "Delhi" },
     "C102": { name: "Priya Das", phone: "9823412356", address: "Mumbai" },
@@ -45,7 +44,6 @@
     "C104": { name: "Suman Roy", phone: "9831022211", address: "Kolkata" }
   };
 
-  // Dummy preparation data
   const preparationQueue = [
     { id: 'PR1001', client: 'C101', kavachName: 'Hanuman Kavach', subDate: '2025-10-12', status: 'Preparing' },
     { id: 'PR1002', client: 'C102', kavachName: 'Narayan Kavach', subDate: '2025-10-13', status: 'Building' },
@@ -118,6 +116,27 @@
 
   renderPreparationList();
 </script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const searchInput = document.querySelector('input[placeholder="Search Client ID..."]');
+  const tableRows = document.querySelectorAll('tbody tr');
+
+  function filterClients() {
+    const searchValue = searchInput.value.toLowerCase().trim();
+
+    tableRows.forEach(row => {
+      const clientIdCell = row.querySelectorAll('td')[0]; // ✅ Client ID is in first column
+      const clientId = clientIdCell ? clientIdCell.textContent.toLowerCase().trim() : '';
+
+      // show or hide row
+      row.style.display = clientId.includes(searchValue) || searchValue === '' ? '' : 'none';
+    });
+  }
+
+  searchInput.addEventListener('input', filterClients);
+});
+</script>
+
 <script>
     if (window.location.search.includes('success=1')) {
         document.getElementById('successAlert').classList.remove('hidden');

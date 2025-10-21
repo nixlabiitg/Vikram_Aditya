@@ -324,6 +324,58 @@
                     <p class="text-white text-sm font-medium leading-normal"><a href="POS">POS</a></p>
                   </div>
 
+                  <div class="flex flex-col" x-data="{ open: <?php echo $isOrderOpen ? 'true' : 'false'; ?> }">
+                    <div @click="open = !open" class="flex items-center gap-3 px-4 py-2 cursor-pointer hover:bg-[#3B3023] rounded-full transition-colors duration-200 <?php echo in_array($currentPage, $orderPages) ? 'bg-[#3a3027]' : 'hover:bg-[#3B3023] rounded-full' ?>">
+                      <div class="text-white" data-icon="UsersThree" data-size="24px" data-weight="regular">
+                        <!-- Sparkle-like Gem -->
+                        <svg xmlns="http://www.w3.org/2000/svg" 
+                            class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round" 
+                                d="M6 3h12l3 6-9 12-9-12 3-6z" />
+                        </svg>
+
+                      </div>
+                      <p class="text-white text-sm font-medium leading-normal">Orders</p>
+                      <svg class="ml-auto w-4 h-4 transform transition-transform duration-300"
+                        :class="{ 'rotate-180': open }" fill="none" stroke="white" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                      </svg>
+                    </div>
+                    <div x-show="open" x-transition class="ml-10 mt-1 space-y-1 text-sm text-[#ffb366]">
+                      <a href="order_referred" class="block py-1 hover:text-white <?php echo $currentPage == 'order_referred' ? 'text-white' : 'hover:text-white' ?>">Referred</a>
+                      <a href="order_cart" class="block py-1 hover:text-white <?php echo $currentPage == 'order_cart' ? 'text-white' : 'hover:text-white' ?>">Cart</a>
+                      <a href="order_accepted" class="block py-1 hover:text-white <?php echo $currentPage == 'order_accepted' ? 'text-white' : 'hover:text-white' ?>">Accepted</a>
+                      <a href="order_completed" class="block py-1 hover:text-white <?php echo $currentPage == 'order_completed' ? 'text-white' : 'hover:text-white' ?>">Completed</a>
+                    </div>
+                  </div>
+
+                  <div class="flex flex-col" x-data="{ open: <?php echo $isPujaOpen ? 'true' : 'false'; ?> }">
+                    <div @click="open = !open" class="flex items-center gap-3 px-4 py-2 cursor-pointer hover:bg-[#3B3023] rounded-full transition-colors duration-200 <?php echo in_array($currentPage, $pujaPages) ? 'bg-[#3a3027]' : 'hover:bg-[#3B3023] rounded-full' ?>">
+                      <div class="text-white" data-icon="UsersThree" data-size="24px" data-weight="regular">
+                        
+                        <svg viewBox="0 0 24 24" class="w-5 h-5 text-white" aria-hidden="true">
+                          <path fill="currentColor" d="M5 15h14l-1.2 4.2a2 2 0 0 1-1.92 1.4H8.12a2 2 0 0 1-1.92-1.4L5 15z"/>
+                          <rect x="4" y="13" width="16" height="2" rx="0.5" fill="currentColor"/>
+                          <path fill="currentColor" d="M12 6c2.7 2.3 3.8 4.6 3.2 6.7-.5 1.8-2 2.9-3.9 2.9s-3.4-1.1-3.9-2.9C6.8 10.6 9.1 8.7 12 6z"/>
+                          <path fill="white" fill-opacity=".8" d="M12 9.2c1.3 1.2 1.8 2.3 1.5 3.3-.3 1-1.1 1.6-2.1 1.6s-1.8-.6-2.1-1.6c-.3-1 .2-2.1 1.5-3.3.2-.2.5-.2.7 0z"/>
+                        </svg>
+
+                      </div>
+                      <p class="text-white text-sm font-medium leading-normal">Puja</p>
+                      <svg class="ml-auto w-4 h-4 transform transition-transform duration-300"
+                        :class="{ 'rotate-180': open }" fill="none" stroke="white" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                      </svg>
+                    </div>
+                    <div x-show="open" x-transition class="ml-10 mt-1 space-y-1 text-sm text-[#ffb366]">
+                      <a href="puja" class="block py-1 hover:text-white <?php echo $currentPage == 'puja' ? 'text-white' : 'hover:text-white' ?>">Puja List</a>
+                      <a href="puja_referred" class="block py-1 hover:text-white <?php echo $currentPage == 'puja_referred' ? 'text-white' : 'hover:text-white' ?>">Referred</a>
+                      <a href="puja_cart" class="block py-1 hover:text-white <?php echo $currentPage == 'puja_cart' ? 'text-white' : 'hover:text-white' ?>">Cart</a>
+                      <a href="puja_accepted" class="block py-1 hover:text-white <?php echo $currentPage == 'puja_accepted' ? 'text-white' : 'hover:text-white' ?>">Accepted</a>
+                      <a href="puja_completed" class="block py-1 hover:text-white <?php echo $currentPage == 'puja_completed' ? 'text-white' : 'hover:text-white' ?>">Completed</a>
+                    </div>
+                  </div>
+
                   <div class="flex flex-col" x-data="{ open: <?php echo $isKavachOpen ? 'true' : 'false'; ?> }">
                     <div @click="open = !open" class="flex items-center gap-3 px-4 py-2 cursor-pointer hover:bg-[#3B3023] rounded-full transition-colors duration-200 <?php echo in_array($currentPage, $kavachPages) ? 'bg-[#3a3027]' : 'hover:bg-[#3B3023] rounded-full' ?>">
                       <div class="text-white" data-icon="Nut" data-size="24px" data-weight="regular">
@@ -345,6 +397,17 @@
                       <a href="kavach_shuddhikaran" class="block py-1 hover:text-white <?php echo $currentPage == 'kavach_shuddhikaran' ? 'text-white' : 'hover:text-white' ?>">kavach Shuddhikaran</a>
                       <a href="kavach_preparation" class="block py-1 hover:text-white <?php echo $currentPage == 'kavach_preparation' ? 'text-white' : 'hover:text-white' ?>">Kavach preparation</a>
                     </div>  
+                  </div>
+
+                  <div @click="open = !open" class="flex items-center gap-3 px-4 py-2 cursor-pointer hover:bg-[#3B3023] rounded-full transition-colors duration-200 <?php echo $currentPage == 'birthday' ? 'bg-[#3a3027]' : 'hover:bg-[#3B3023] rounded-full'; ?>">
+                    <a href="birthday"><div class="text-white" data-icon="Calendar" data-size="24px" data-weight="regular">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                        <path
+                          d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Zm-96-88v64a8,8,0,0,1-16,0V132.94l-4.42,2.22a8,8,0,0,1-7.16-14.32l16-8A8,8,0,0,1,112,120Zm59.16,30.45L152,176h16a8,8,0,0,1,0,16H136a8,8,0,0,1-6.4-12.8l28.78-38.37A8,8,0,1,0,145.07,132a8,8,0,1,1-13.85-8A24,24,0,0,1,176,136,23.76,23.76,0,0,1,171.16,150.45Z"
+                        ></path>
+                      </svg>
+                    </div></a>
+                    <p class="text-white text-sm font-medium leading-normal"><a href="birthday">Birthday</a></p>
                   </div>
 
                   <div class="flex flex-col" x-data="{ open: <?php echo $isRepairOpen ? 'true' : 'false'; ?> }">
@@ -399,74 +462,6 @@
                     </div>   
                   </div>
               
-                  <div @click="open = !open" class="flex items-center gap-3 px-4 py-2 cursor-pointer hover:bg-[#3B3023] rounded-full transition-colors duration-200 <?php echo $currentPage == 'birthday' ? 'bg-[#3a3027]' : 'hover:bg-[#3B3023] rounded-full'; ?>">
-                    <a href="birthday"><div class="text-white" data-icon="Calendar" data-size="24px" data-weight="regular">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                        <path
-                          d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Zm-96-88v64a8,8,0,0,1-16,0V132.94l-4.42,2.22a8,8,0,0,1-7.16-14.32l16-8A8,8,0,0,1,112,120Zm59.16,30.45L152,176h16a8,8,0,0,1,0,16H136a8,8,0,0,1-6.4-12.8l28.78-38.37A8,8,0,1,0,145.07,132a8,8,0,1,1-13.85-8A24,24,0,0,1,176,136,23.76,23.76,0,0,1,171.16,150.45Z"
-                        ></path>
-                      </svg>
-                    </div></a>
-                    <p class="text-white text-sm font-medium leading-normal"><a href="birthday">Birthday</a></p>
-                  </div>
-
-                  <div class="flex flex-col" x-data="{ open: <?php echo $isOrderOpen ? 'true' : 'false'; ?> }">
-                    <div @click="open = !open" class="flex items-center gap-3 px-4 py-2 cursor-pointer hover:bg-[#3B3023] rounded-full transition-colors duration-200 <?php echo in_array($currentPage, $orderPages) ? 'bg-[#3a3027]' : 'hover:bg-[#3B3023] rounded-full' ?>">
-                      <div class="text-white" data-icon="UsersThree" data-size="24px" data-weight="regular">
-                        <!-- Sparkle-like Gem -->
-                        <svg xmlns="http://www.w3.org/2000/svg" 
-                            class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                          <path stroke-linecap="round" stroke-linejoin="round" 
-                                d="M6 3h12l3 6-9 12-9-12 3-6z" />
-                        </svg>
-
-                      </div>
-                      <p class="text-white text-sm font-medium leading-normal">Orders</p>
-                      <svg class="ml-auto w-4 h-4 transform transition-transform duration-300"
-                        :class="{ 'rotate-180': open }" fill="none" stroke="white" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                      </svg>
-                    </div>
-                    <div x-show="open" x-transition class="ml-10 mt-1 space-y-1 text-sm text-[#ffb366]">
-                      <a href="order_referred" class="block py-1 hover:text-white <?php echo $currentPage == 'order_referred' ? 'text-white' : 'hover:text-white' ?>">Referred</a>
-                      <a href="order_cart" class="block py-1 hover:text-white <?php echo $currentPage == 'order_cart' ? 'text-white' : 'hover:text-white' ?>">Cart</a>
-                      <a href="order_accepted" class="block py-1 hover:text-white <?php echo $currentPage == 'order_accepted' ? 'text-white' : 'hover:text-white' ?>">Accepted</a>
-                      <a href="order_completed" class="block py-1 hover:text-white <?php echo $currentPage == 'order_completed' ? 'text-white' : 'hover:text-white' ?>">Completed</a>
-                    </div>
-                  </div>
-
-                  <div class="flex flex-col" x-data="{ open: <?php echo $isPujaOpen ? 'true' : 'false'; ?> }">
-                    <div @click="open = !open" class="flex items-center gap-3 px-4 py-2 cursor-pointer hover:bg-[#3B3023] rounded-full transition-colors duration-200 <?php echo in_array($currentPage, $pujaPages) ? 'bg-[#3a3027]' : 'hover:bg-[#3B3023] rounded-full' ?>">
-                      <div class="text-white" data-icon="UsersThree" data-size="24px" data-weight="regular">
-                        
-                        <!-- Havan (kund + flame) — Solid -->
-                        <svg viewBox="0 0 24 24" class="w-5 h-5 text-white" aria-hidden="true">
-                          <!-- kund base -->
-                          <path fill="currentColor" d="M5 15h14l-1.2 4.2a2 2 0 0 1-1.92 1.4H8.12a2 2 0 0 1-1.92-1.4L5 15z"/>
-                          <!-- top rim -->
-                          <rect x="4" y="13" width="16" height="2" rx="0.5" fill="currentColor"/>
-                          <!-- flame -->
-                          <path fill="currentColor" d="M12 6c2.7 2.3 3.8 4.6 3.2 6.7-.5 1.8-2 2.9-3.9 2.9s-3.4-1.1-3.9-2.9C6.8 10.6 9.1 8.7 12 6z"/>
-                          <!-- inner flame highlight -->
-                          <path fill="white" fill-opacity=".8" d="M12 9.2c1.3 1.2 1.8 2.3 1.5 3.3-.3 1-1.1 1.6-2.1 1.6s-1.8-.6-2.1-1.6c-.3-1 .2-2.1 1.5-3.3.2-.2.5-.2.7 0z"/>
-                        </svg>
-
-                      </div>
-                      <p class="text-white text-sm font-medium leading-normal">Puja</p>
-                      <svg class="ml-auto w-4 h-4 transform transition-transform duration-300"
-                        :class="{ 'rotate-180': open }" fill="none" stroke="white" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                      </svg>
-                    </div>
-                    <div x-show="open" x-transition class="ml-10 mt-1 space-y-1 text-sm text-[#ffb366]">
-                      <a href="puja" class="block py-1 hover:text-white <?php echo $currentPage == 'puja' ? 'text-white' : 'hover:text-white' ?>">Puja List</a>
-                      <a href="puja_referred" class="block py-1 hover:text-white <?php echo $currentPage == 'puja_referred' ? 'text-white' : 'hover:text-white' ?>">Referred</a>
-                      <a href="puja_cart" class="block py-1 hover:text-white <?php echo $currentPage == 'puja_cart' ? 'text-white' : 'hover:text-white' ?>">Cart</a>
-                      <a href="puja_accepted" class="block py-1 hover:text-white <?php echo $currentPage == 'puja_accepted' ? 'text-white' : 'hover:text-white' ?>">Accepted</a>
-                      <a href="puja_completed" class="block py-1 hover:text-white <?php echo $currentPage == 'puja_completed' ? 'text-white' : 'hover:text-white' ?>">Completed</a>
-                    </div>
-                  </div>
-
                   <div @click="open = !open" class="flex items-center gap-3 px-4 py-2 cursor-pointer hover:bg-[#3B3023] rounded-full transition-colors duration-200 <?php echo $currentPage == 'payment' ? 'bg-[#3a3027]' : 'hover:bg-[#3B3023] rounded-full'; ?>">
                     <a href="payment"><div class="text-white" data-icon="Tag" data-size="24px" data-weight="regular">
                       <!-- Payment Status (INR Rupee Icon) -->

@@ -9,9 +9,9 @@
     </h1>
 
     <div class="overflow-x-auto">
-        <div class="overflow-x-auto -webkit-overflow-scrolling-touch">
-        <table class="min-w-[700px] md:min-w-full sm:min-w-full">
-            <thead class="bg-[#FFF4E6] text-[#7A3E00]">
+        <div class="overflow-x-auto -webkit-overflow-scrolling-touch rounded-xl">
+        <table class="min-w-[700px] bg-white md:min-w-full sm:min-w-full">
+            <thead class="bg-[#FFF4E6] text-[#7A3E00] border-b border-green-600">
                 <tr>
                     <th class="px-6 py-3 text-left text-sm font-semibold">Complaint ID</th>
                     <th class="px-6 py-3 text-left text-sm font-semibold">Date</th>
@@ -33,9 +33,9 @@
                 foreach ($complaints as $row) {
                     echo '<tr class="hover:bg-orange-50 transition">';
                     foreach ($row as $i => $value) {
-                        echo '<td class="px-6 py-4 border-b">' . $value . '</td>';
+                        echo '<td class="px-6 py-4 border-b border-green-600">' . $value . '</td>';
                     }
-                    echo '<td class="px-6 py-4 border-b text-center">';
+                    echo '<td class="px-6 py-4 border-b border-green-600 text-center">';
                     echo '<a href="#" onclick="showComplaintDetail(\'' . $row[0] . '\')" class="inline-flex items-center text-blue-600 hover:underline font-medium">';
                     echo '<svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg> View';
                     echo '</a>';

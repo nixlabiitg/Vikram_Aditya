@@ -155,5 +155,24 @@ function toggleExpand(id, el) {
     modal.classList.add("hidden");
   }
 </script>
+<!-- 🔍 Search Script -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const searchInput = document.querySelector('input[placeholder="Search Client ID..."]');
+  const tableRows = document.querySelectorAll('tbody tr');
 
+  function filterClients() {
+    const searchValue = searchInput.value.toLowerCase().trim();
+
+    tableRows.forEach(row => {
+      const clientIdCell = row.querySelectorAll('td')[2];
+      const clientId = clientIdCell ? clientIdCell.textContent.toLowerCase().trim() : '';
+
+      row.style.display = clientId.includes(searchValue) || searchValue === '' ? '' : 'none';
+    });
+  }
+
+  searchInput.addEventListener('input', filterClients);
+});
+</script>
 <?php include("layouts/footer.php"); ?>
