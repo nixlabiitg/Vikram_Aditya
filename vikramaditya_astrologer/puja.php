@@ -2,7 +2,7 @@
 <div class="min-h-screen text-gray-800">
   
   <!-- Header -->
-  <header class="flex justify-between items-center p-6 border-b border-orange-300">
+  <header class="flex justify-between items-center p-6">
     <h1 class="text-2xl font-bold text-yellow-900">Puja</h1>
   </header>
   <div class="mb-2 bg-white rounded-xl shadow p-6">
@@ -210,7 +210,7 @@
 
     </div>
   </div>
-  <div x-data="{ tab: 'booked' }" class="p-6">
+  <!-- <div x-data="{ tab: 'booked' }" class="p-6">
   <div class="flex justify-between items-center mb-6">
     <h1 class="text-xl font-bold text-[#7A3E00] flex items-center gap-2">
       Booking Details
@@ -225,7 +225,6 @@
       <button onclick="document.getElementById('successAlert').style.display='none'" class="text-green-900 font-bold">✕</button>
   </div>
 
-  <!-- Tabs -->
   <div class="flex mb-6 space-x-4 border-b border-orange-200">
     <button @click="tab = 'booked'" 
         :class="tab === 'booked' ? 'border-b-2 border-orange-500 text-orange-600 font-semibold' : 'text-gray-600'" 
@@ -244,7 +243,6 @@
     </button>
   </div>
 
-  <!-- Tab Content -->
   <div x-show="tab === 'booked'" class="space-y-6 bg-white shadow-lg rounded-2xl p-6 mb-6 border border-orange-200">
     <h2 class="text-xl font-semibold mb-4">Booked Appointments</h2>
     <div id="proposal-table" class="overflow-x-auto bg-white shadow rounded-xl">
@@ -284,10 +282,9 @@
   </div>
 </div>
 
-<!-- Alpine.js -->
 <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
-  
+   -->
 </div>
 
 <script>

@@ -368,10 +368,10 @@
                       </svg>
                     </div>
                     <div x-show="open" x-transition class="ml-10 mt-1 space-y-1 text-sm text-[#ffb366]">
-                      <a href="puja" class="block py-1 hover:text-white <?php echo $currentPage == 'puja' ? 'text-white' : 'hover:text-white' ?>">Puja List</a>
-                      <a href="puja_referred" class="block py-1 hover:text-white <?php echo $currentPage == 'puja_referred' ? 'text-white' : 'hover:text-white' ?>">Referred</a>
-                      <a href="puja_cart" class="block py-1 hover:text-white <?php echo $currentPage == 'puja_cart' ? 'text-white' : 'hover:text-white' ?>">Cart</a>
-                      <a href="puja_accepted" class="block py-1 hover:text-white <?php echo $currentPage == 'puja_accepted' ? 'text-white' : 'hover:text-white' ?>">Accepted</a>
+                      <a href="puja" class="block py-1 hover:text-white <?php echo $currentPage == 'puja' ? 'text-white' : 'hover:text-white' ?>">Puja</a>
+                      <a href="puja_all" class="block py-1 hover:text-white <?php echo $currentPage == 'puja_all' ? 'text-white' : 'hover:text-white' ?>">All List</a>
+                      <a href="puja_waiting" class="block py-1 hover:text-white <?php echo $currentPage == 'puja_waiting' ? 'text-white' : 'hover:text-white' ?>">Waiting</a>
+                      <a href="puja_booked" class="block py-1 hover:text-white <?php echo $currentPage == 'puja_booked' ? 'text-white' : 'hover:text-white' ?>">Booked</a>
                       <a href="puja_completed" class="block py-1 hover:text-white <?php echo $currentPage == 'puja_completed' ? 'text-white' : 'hover:text-white' ?>">Completed</a>
                     </div>
                   </div>
@@ -379,16 +379,15 @@
                   <div class="flex flex-col" x-data="{ open: <?php echo $isKavachOpen ? 'true' : 'false'; ?> }">
                     <div @click="open = !open" class="flex items-center gap-3 px-4 py-2 cursor-pointer hover:bg-[#3B3023] rounded-full transition-colors duration-200 <?php echo in_array($currentPage, $kavachPages) ? 'bg-[#3a3027]' : 'hover:bg-[#3B3023] rounded-full' ?>">
                       <div class="text-white" data-icon="Nut" data-size="24px" data-weight="regular">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                          <path
-                          d="M128,80a48,48,0,1,0,48,48A48.06,48.06,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Zm95.68-93.85L135.68,18a15.88,15.88,0,0,0-15.36,0l-88,48.17a16,16,0,0,0-8.32,14v95.64a16,16,0,0,0,8.32,14l88,48.17a15.88,15.88,0,0,0,15.36,0l88-48.17h0a16,16,0,0,0,8.32-14V80.18A16,16,0,0,0,223.68,66.15ZM128,224,40,175.82V80.18L128,32l88,48.17v95.64Z"
-                          ></path>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                d="M12 2l7 4v6c0 5-3 9-7 10-4-1-7-5-7-10V6l7-4z" />
                         </svg>
                       </div>
                       <p class="text-white text-sm font-medium leading-normal">Kavach</p>
-                      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                              d="M12 2l7 4v6c0 5-3 9-7 10-4-1-7-5-7-10V6l7-4z" />
+                      <svg class="ml-auto w-4 h-4 transform transition-transform duration-300"
+                        :class="{ 'rotate-180': open }" fill="none" stroke="white" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                       </svg>
                     </div>
                     <div x-show="open" x-transition class="ml-10 mt-1 space-y-1 text-sm text-[#ffb366]">

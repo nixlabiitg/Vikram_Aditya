@@ -355,9 +355,10 @@
                       </svg>
                     </div>
                     <div x-show="open" x-transition class="ml-10 mt-1 space-y-1 text-sm text-[#ffb366]">
-                      <a href="puja_referred" class="block py-1 hover:text-white <?php echo $currentPage == 'puja_referred' ? 'text-white' : 'hover:text-white' ?>">Referred</a>
-                      <a href="puja_cart" class="block py-1 hover:text-white <?php echo $currentPage == 'puja_cart' ? 'text-white' : 'hover:text-white' ?>">Cart</a>
-                      <a href="puja_accepted" class="block py-1 hover:text-white <?php echo $currentPage == 'puja_accepted' ? 'text-white' : 'hover:text-white' ?>">Accepted</a>
+                      <a href="puja" class="block py-1 hover:text-white <?php echo $currentPage == 'puja' ? 'text-white' : 'hover:text-white' ?>">Puja</a>
+                      <a href="puja_all" class="block py-1 hover:text-white <?php echo $currentPage == 'puja_all' ? 'text-white' : 'hover:text-white' ?>">All List</a>
+                      <a href="puja_waiting" class="block py-1 hover:text-white <?php echo $currentPage == 'puja_waiting' ? 'text-white' : 'hover:text-white' ?>">Waiting</a>
+                      <a href="puja_booked" class="block py-1 hover:text-white <?php echo $currentPage == 'puja_booked' ? 'text-white' : 'hover:text-white' ?>">Booked</a>
                       <a href="puja_completed" class="block py-1 hover:text-white <?php echo $currentPage == 'puja_completed' ? 'text-white' : 'hover:text-white' ?>">Completed</a>
                     </div>
                   </div>
