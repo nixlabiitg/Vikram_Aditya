@@ -353,7 +353,6 @@
                       <a href="puja_waiting" class="block py-1 hover:text-white <?php echo $currentPage == 'puja_waiting' ? 'text-white' : 'hover:text-white' ?>">Waiting</a>
                       <a href="puja_booked" class="block py-1 hover:text-white <?php echo $currentPage == 'puja_booked' ? 'text-white' : 'hover:text-white' ?>">Booked</a>
                       <a href="puja_completed" class="block py-1 hover:text-white <?php echo $currentPage == 'puja_completed' ? 'text-white' : 'hover:text-white' ?>">Completed</a>
-                     
                     </div>
                   </div>
 

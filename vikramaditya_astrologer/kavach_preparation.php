@@ -37,6 +37,7 @@
 </section>
 
 <script>
+ 
   const clientDatabase = {
     "C101": { name: "Rahul Sharma", phone: "9876543210", address: "Delhi" },
     "C102": { name: "Priya Das", phone: "9823412356", address: "Mumbai" },
